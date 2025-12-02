@@ -22,10 +22,12 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <hr />
-    <section class="season-section">
-      <div class="season-grid">
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <div class="intro-grid">
         <!-- LEFT SIDE: TEXT CONTENT -->
-        <div class="season-text">
+        <div class="intro-text">
           <h2>Sæsonens Friske Smage fra Esromgaard</h2>
 
           <p>
@@ -52,12 +54,58 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <!-- RIGHT SIDE: IMAGE -->
-        <div class="season-image">
+        <div class="intro-image">
           <img
             src="/images/strawberry-fruit-background.webp"
             alt="Jordbær fra Esromgaard"
           />
         </div>
+      </div>
+    </section>
+
+    <!-- 3 CARDS SECTION -->
+    <section class="product-cards">
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/asparges_3.webp" alt="billede af asparges" />
+        </div>
+        <h3>Frugt og Grønt</h3>
+        <p>
+          Solmodne jordbær, friske asparges, knasende ærter, rabarber og
+          kartofler høstet hver dag. Esromgaard dyrker alt under åben himmel, så
+          smagen af sommer følger med helt hjem.
+        </p>
+        <a class="green-button" href="/frugt">Se udvalget</a>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="/images/hjemmelavet_3.webp"
+            alt="billede af hjemmelavede varer"
+          />
+        </div>
+        <h3>Gårdsalget</h3>
+        <p>
+          Esromgaards gårdsalg tilbyder dagens friske råvarer fra marken:
+          jordbær, kartofler, ærter, rabarber og asparges. Her finder du også
+          små, hjemmelavede produkter - lokalt, nært og lige til at tage med
+          hjem.
+        </p>
+        <a class="green-button" href="/gaardsalg">besøg gårdsalget</a>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/hus_3.webp" alt="billede af asparges" />
+        </div>
+        <h3>Om Esromgaard</h3>
+        <p>
+          Danmarks næstældste større landbrug har rødder tilbage til 1151 som
+          klostergård under Esrum Kloster. I dag drives gården som et moderne
+          landbrug med frugt- og grøntproduktion.
+        </p>
+        <a class="green-button" href="/omgaarden">Læs mere</a>
       </div>
     </section>
   </div>
@@ -107,21 +155,79 @@ import Layout from "../layouts/Layout.astro";
     margin-bottom: 6rem;
   }
 
-  /* SEASON SECTION */
-  .season-section {
-    margin-top: 4rem;
+  /* INTRO SECTION */
+  .intro-section {
+    margin-bottom: 4rem;
   }
 
-  .season-grid {
+  .intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    align-items: start;
   }
 
-  .season-image img {
+  .intro-text {
+    min-width: 0;
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-s);
+  }
+
+  .intro-text a {
+    margin-top: 2rem;
+    display: inline-block;
+  }
+
+  .intro-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .intro-image img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
+  }
+
+  /* 3 CARDS SECTION */
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-s);
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    overflow: hidden;
     border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card .green-button {
+    margin-top: 1rem;
+    align-self: flex-start;
   }
 </style>

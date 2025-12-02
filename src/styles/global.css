@@ -33,7 +33,7 @@
   --color-underline: #bac1a8;
 
   /* Optional line heights */
-  --line-height-body: 1.6;
+  --line-height-body: 1.8;
   --line-height-heading: 1.2;
 }
 
@@ -89,7 +89,7 @@ a {
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 2rem;
   font-size: var(--font-size-s);
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -103,7 +103,7 @@ a {
   background: white;
   color: black;
   border-radius: 5px;
-  padding: 0.75rem 3rem;
+  padding: 0.5rem 2rem;
   font-size: var(--font-size-s);
   display: inline-block;
   margin-top: 0.75rem;
