@@ -3,8 +3,63 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="hero">
+  <div slot="hero" class="hero">
     <img src="/images/esromgaard_hero.webp" alt="Hero Image" />
+  </div>
+
+  <div class="content">
+    <div class="intro-title">
+      <div>
+        <h1>Esromgaard</h1>
+        <h2>- Smagen af sommer</h2>
+      </div>
+      <div>
+        <img
+          class="strawberry-fit-content"
+          src="/public/images/strawberry_icon.svg"
+          alt="strawberry icon"
+        />
+      </div>
+    </div>
+    <hr />
+    <section class="season-section">
+      <div class="season-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="season-text">
+          <h2>Sæsonens Friske Smage fra Esromgaard</h2>
+
+          <p>
+            Vores jordbær har sat Esromgaard på landkortet. Om det skyldes
+            jorden, dyrkningen eller solen ved vi ikke, men de smager dejligt,
+            og vi er meget stolte af dem.
+          </p>
+
+          <p>
+            Vi dyrker også kartofler, ærter, rabarber og indtil Skt. Hans
+            stikker vi grønne og hvide asparges. Alt vokser under åben himmel,
+            så vores daglige høst, ligesom vores jordbær, får den dejlige og
+            friske smag af sol og sommer.
+          </p>
+
+          <p>
+            Vi har <strong>LUKKET</strong> for sommeren i <strong
+              >Den Store Røde Lade</strong
+            >. Følg med fra vi åbner vejboden med friske sprøde asparges og
+            rabarber når de er klar til høst til maj 2026.
+          </p>
+
+          <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="season-image">
+          <img
+            src="/images/strawberry-fruit-background.webp"
+            alt="Jordbær fra Esromgaard"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </Layout>
 
@@ -13,6 +68,7 @@ import Layout from "../layouts/Layout.astro";
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    position: relative;
   }
 
   .hero img {
@@ -20,5 +76,52 @@ import Layout from "../layouts/Layout.astro";
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  .intro-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 4rem;
+  }
+
+  .intro-title > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro-title h1,
+  .intro-title h2 {
+    margin: 0;
+    line-height: 1.05;
+  }
+
+  .intro-title > div:last-child {
+    display: flex;
+    align-items: stretch;
+  }
+
+  hr {
+    color: var(--color-underline);
+    margin-bottom: 6rem;
+  }
+
+  /* SEASON SECTION */
+  .season-section {
+    margin-top: 4rem;
+  }
+
+  .season-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .season-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
   }
 </style>
