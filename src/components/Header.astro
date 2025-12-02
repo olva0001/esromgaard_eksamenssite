@@ -1,0 +1,92 @@
+---
+
+---
+
+<header class="header">
+  <a href="/"
+    ><img
+      src="/public/images/esromgaard_logo.webp"
+      alt="Esromgaard Logo"
+      class="logo"
+    /></a
+  >
+  <div class="menu">
+    <nav>
+      <ul>
+        <li><a href="/frugt">FRUGT OG GRØNT</a></li>
+        <li><a href="/salgssteder">SALGSSTEDER</a></li>
+        <li><a href="/gaardsalg">GÅRDSALGET</a></li>
+        <li><a href="/omgaarden">OM GÅRDEN</a></li>
+        <li><a href="/findvej">FIND VEJ</a></li>
+        <li><a href="/job">JOB</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    align-items: center;
+  }
+
+  .header > a {
+    display: inline-block;
+    line-height: 0;
+  }
+
+  .menu {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: auto;
+    height: 50px;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--color-header-green);
+    font-weight: 500;
+    font-size: var(--font-size-s);
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  nav a.active::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-header-green);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname;
+
+    document.querySelectorAll("nav a").forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
