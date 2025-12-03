@@ -2,4 +2,264 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
+<Layout>
+  <section class="content">
+    <div class="intro-title">
+      <div>
+        <h1>Frisk frugt og grønt hele sommeren</h1>
+        <h2>- Sæsonens bedste råvarer, hver dag</h2>
+      </div>
+      <div>
+        <img
+          class="strawberry-fit-content"
+          src="/public/images/strawberry_icon.svg"
+          alt="strawberry icon"
+        />
+      </div>
+    </div>
+    <hr />
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <div class="intro-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <h3>Friske råvarer - hver morgen, hele sommeren</h3>
+          <p>
+            Hver morgen sommeren igennem fylder vi bilen på Esromgaard og pakker
+            jordbær, ærter, asparges, rabarber og kartofler. Når bilen er klar,
+            kører vi ud til vores forskellige salgssteder i området. På den måde
+            kan vores kunder få friske råvarer hver dag, direkte fra gården,
+            uanset hvor de besøger os.
+          </p>
+
+          <p>
+            Esromgaard har flere måder at købe vores friske råvarer på. Vores
+            faste salgssteder er gårdsalget og vejboden, mens øvrige salgssteder
+            varierer fra sæson til sæson. De aktuelle steder og åbningstider kan
+            altid ses her på siden, så du nemt kan hente frisk frugt og grønt.
+          </p>
+
+          <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="intro-image">
+          <img src="/images/gillelejehavn.webp" alt="Jordbær fra Esromgaard" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 CARDS SECTION -->
+    <section class="salgssteder-cards">
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/gaardsalget.webp" alt="billede af asparges" />
+        </div>
+        <h3>Esromgaard - Gårdsalget</h3>
+        <p>
+          Gårdsalget byder på dagens friske råvarer fra marken: jordbær,
+          kartofler, ærter, rabarber og asparges. Her finder du også små,
+          hjemmelavede produkter - lokalt, nært og lige til at tage med hjem.
+        </p>
+        <p><strong>Åbningstider:</strong> LUKKET for sæsonen</p>
+        <p>
+          <strong>Adresse:</strong> Frederiksværksvej 11, 3230 Græsted (Ved den store
+          røde lade)
+        </p>
+        <a class="green-button" href="/findvej">Find vej</a>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="/images/vejboden.webp"
+            alt="billede af hjemmelavede varer"
+          />
+        </div>
+        <h3>Esromgaard - Vejboden</h3>
+        <p>
+          Esromgaards vejbod er perfekt, hvis du hurtigt vil have frisk frugt og
+          grønt med hjem. Her finder du sæsonens jordbær, ærter, asparges,
+          rabarber og kartofler - lige til at tage med på farten.
+        </p>
+        <p><strong>Åbningstider:</strong> LUKKET for sæsonen</p>
+        <p>
+          <strong>Adresse:</strong> Frederiksværksvej 11, 3230 Græsted
+        </p>
+        <a class="green-button" href="/findvej">Find vej</a>
+      </div>
+    </section>
+    <section class="small-title-section">
+      <h2>Billeder fra vores salgssteder gennem tiden</h2>
+      <hr />
+    </section>
+
+    <!-- gallery -->
+    <section class="gallery">
+      <div class="gallery-image">
+        <img src="/images/galleri_1.webp" alt="billede af asparges" />
+      </div>
+
+      <div class="gallery-image">
+        <img src="/images/galleri_2.webp" alt="billede af hjemmelavede varer" />
+      </div>
+
+      <div class="gallery-image">
+        <img src="/images/galleri_3.webp" alt="billede af asparges" />
+      </div>
+
+      <div class="gallery-image">
+        <img src="/images/galleri_4.webp" alt="billede af hjemmelavede varer" />
+      </div>
+
+      <div class="gallery-image">
+        <img src="/images/galleri_5.webp" alt="billede af asparges" />
+      </div>
+
+      <div class="gallery-image">
+        <img src="/images/galleri_6.webp" alt="billede af hjemmelavede varer" />
+      </div>
+    </section>
+  </section>
+
+  <style>
+    .intro-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      margin-top: 10%;
+    }
+
+    .intro-title > div:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .intro-title h1,
+    .intro-title h2 {
+      margin: 0;
+      line-height: 1.05;
+    }
+
+    .intro-title > div:last-child {
+      display: flex;
+      align-items: stretch;
+    }
+
+    hr {
+      color: var(--color-underline);
+      margin-bottom: 5rem;
+      margin-top: 2rem;
+    }
+
+    /* INTRO SECTION */
+    .intro-section {
+      margin-bottom: 4rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+      align-items: start;
+    }
+
+    .intro-text {
+      min-width: 0;
+      line-height: var(--line-height-body);
+      font-size: var(--font-size-s);
+    }
+
+    .intro-text a {
+      margin-top: 2rem;
+      display: inline-block;
+    }
+
+    .intro-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      align-self: stretch;
+      min-width: 0;
+    }
+
+    .intro-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom;
+      display: block;
+    }
+
+    /* 2 CARDS SECTION */
+    .salgssteder-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      font-size: var(--font-size-s);
+    }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 5 / 3;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card .green-button {
+      margin-top: 1rem;
+      align-self: flex-start;
+    }
+
+    .card p {
+      margin-bottom: 0.5rem;
+    }
+
+    .small-title-section {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5%;
+      margin-top: 5rem;
+      margin-bottom: 10%;
+    }
+
+    .gallery-image {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 5%;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</Layout>
