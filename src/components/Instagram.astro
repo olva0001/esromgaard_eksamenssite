@@ -1,0 +1,107 @@
+---
+// Instagram.astro
+---
+
+<section class="instagram-section">
+  <div class="page">
+    <div class="content instagram-inner">
+      <!-- LEFT SIDE: TEXT -->
+      <div class="instagram-info">
+        <h2>Følg med på Esromgaards marker</h2>
+
+        <p>
+          Vil du holde dig opdateret på, hvad der er i sæson, og hvornår der er
+          friske råvarer fra vores marker? På Facebook og Instagram deler vi
+          løbende nyt om årets høst, aktuelle frugt- og grøntsagsudvalg samt
+          praktisk information om vores populære pluk-selv jordbær. Følg os på
+          sociale medier, så får du besked, når pluk-selv jordbær åbner igen til
+          næste år - og du går aldrig glip af, hvad der spirer og gror på
+          Esromgaard.
+        </p>
+
+        <p>Find Esromgaard på både Facebook og Instagram</p>
+
+        <div class="instagram-icons">
+          <a
+            href="https://www.facebook.com/esromgaard/?locale=da_DK"
+            target="_blank"
+          >
+            <img src="/public/images/facebook_icon.svg" alt="facebook icon" />
+          </a>
+          <a href="https://www.instagram.com/esromgaard/?hl=da" target="_blank">
+            <img src="/public/images/instagram_icon.svg" alt="instagram icon" />
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: INSTAGRAM EMBED -->
+      <div class="instagram-embed">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/esromgaard/?utm_source=ig_embed&utm_campaign=loading"
+          data-instgrm-version="14"
+          style="
+            background:#FFF; 
+            border:0; 
+            border-radius:3px; 
+            box-shadow:0 0 1px 0 rgba(0,0,0,0.5), 
+                        0 1px 10px 0 rgba(0,0,0,0.15); 
+            margin: 1px; 
+            max-width:658px; 
+            min-width:326px; 
+            padding:0; 
+            width:99.375%;
+          "
+        >
+        </blockquote>
+
+        <script async src="//platform.instagram.com/en_US/embeds.js"></script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* FULL-BLEED BACKGROUND */
+  .instagram-section {
+    background-color: #f7f7f7;
+    padding: 4rem 0;
+    width: 100%;
+  }
+
+  /* ALIGN TO SITE GRID */
+  .instagram-inner {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin: 0 8rem 0 8rem;
+    font-size: var(--font-size-s);
+  }
+
+  /* LEFT COLUMN */
+  .instagram-info {
+    width: 50%;
+  }
+
+  .instagram-icons img {
+    width: 50px;
+    margin-right: 1rem;
+  }
+
+  /* RIGHT COLUMN */
+  .instagram-embed {
+    width: 40%;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .instagram-inner {
+      flex-direction: column;
+    }
+
+    .instagram-info,
+    .instagram-embed {
+      width: 100%;
+    }
+  }
+</style>

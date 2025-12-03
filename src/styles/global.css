@@ -126,3 +126,11 @@ a {
   display: block;
   align-self: stretch;
 }
+
+.banner {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 3rem 0 3rem 0;
+}

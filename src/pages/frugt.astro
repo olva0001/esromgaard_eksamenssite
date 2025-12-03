@@ -2,4 +2,118 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
+<Layout>
+  <div slot="hero" class="hero">
+    <div class="title">
+      <h1 class="frugt_title_font">Håndplukket og frisk fra marken</h1>
+      <h2 class="frugt_title_font">
+        - Jordbær, Asparges, Kartofler, Ærter og Rabarber
+      </h2>
+    </div>
+    <div class="hero-image">
+      <img src="/images/frugt_hero.webp" alt="Hero Image" />
+    </div>
+  </div>
+
+  <!-- INTRO SECTION -->
+  <div class="content">
+    <section class="intro-section">
+      <div class="intro-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <h2>Friskere bliver det ikke</h2>
+
+          <p>
+            Vi sætter en stor ære i at levere friske jordbær til vores kunder,
+            og de jordbær, du køber i gårdsalget, er altid plukket samme morgen.
+            Også asparges, ærter, kartofler og rabarber kommer direkte fra
+            marken og ud til salgsstederne friske og fulde af smag.
+          </p>
+
+          <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="intro-image">
+          <img
+            src="/images/kartofel_frugt.webp"
+            alt="Kartofel fra Esromgaard"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .hero-image {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+      margin-bottom: 5rem;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      scale: 1.05;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title {
+      position: absolute;
+      top: 70%;
+      left: 5%;
+      text-align: left;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .frugt_title_font {
+      color: white;
+    }
+
+    /* INTRO SECTION */
+    .intro-section {
+      margin-bottom: 4rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .intro-text {
+      min-width: 0;
+      line-height: var(--line-height-body);
+      font-size: var(--font-size-s);
+    }
+
+    .intro-text a {
+      margin-top: 5rem;
+      display: inline-block;
+    }
+
+    .intro-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      align-self: stretch;
+      min-width: 0;
+    }
+
+    .intro-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  </style>
+</Layout>
