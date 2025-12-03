@@ -2,12 +2,15 @@
 const url = import.meta.env.SUPABASE_URL;
 const key = import.meta.env.SUPABASE_API_KEY;
 
-const res = await fetch(`${url}/rest/v1/categories?select=*`, {
-  headers: {
-    apikey: key,
-    Authorization: `Bearer ${key}`,
-  },
-});
+const res = await fetch(
+  `${url}/rest/v1/categories?select=*,variants(*)`,
+  {
+    headers: {
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+    },
+  }
+);
 
 const categories = await res.json();
 ---
@@ -18,7 +21,7 @@ const categories = await res.json();
   {
     categories.map((frugt) => (
       <div class="category-item">
-        <!-- CARD (image + content + button) -->
+        <!-- CARD -->
         <div class="category-card">
           <div class="image-wrapper">
             <img src={frugt.image} alt={frugt.name} />
@@ -34,9 +37,21 @@ const categories = await res.json();
           </button>
         </div>
 
+        <!-- PANEL WITH VARIANTS -->
         <div class="panel">
-          <h3>Varianter for {frugt.name}</h3>
-          <p>(Her loader du senere varianter fra Supabase eller viser statisk indhold.)</p>
+          {frugt.variants && frugt.variants.length > 0 && (
+            <ul class="variants-list">
+              {frugt.variants.map((variant) => (
+                <li class="variant-item">
+                  <div class="panel-image-wrapper">
+                    <img src={variant.image} alt={variant.name} />
+                  </div>
+                  <h3>{variant.name}</h3>
+                  <p>{variant.description}</p>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     ))
@@ -50,7 +65,6 @@ const categories = await res.json();
     gap: 2rem;
     margin-bottom: 2rem;
   }
-
 
   .category-item {
     display: flex;
@@ -79,6 +93,21 @@ const categories = await res.json();
   }
 
   .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .panel-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .panel-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -116,31 +145,42 @@ const categories = await res.json();
     margin-bottom: 2rem;
     padding-top: 5rem;
     margin-top: -2rem;
-    top: 10;
+  }
+
+  .variants-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .variants-list li {
+    list-style: none;
   }
 
   .category-item.open .panel {
     display: block;
   }
+
   .category-item.open .green-button .arrow {
     transform: rotate(90deg);
+  }
+
+  .variants-list {
+    margin: 1rem 0 0 0;
+    padding-left: 1.5rem;
+    list-style: disc;
+    font-size: var(--font-size-s);
   }
 </style>
 
 <script>
-  // Use event delegation to be defensive if the DOM changes
   document.addEventListener("click", function (e) {
     const toggle = e.target.closest(".accordion");
     if (!toggle) return;
 
-    // find the wrapper (.category-item) that contains the card + panel
     const item = toggle.closest(".category-item");
     if (!item) return;
 
-    // toggle an 'open' class on the wrapper (useful for CSS + ARIA)
     item.classList.toggle("open");
-
-    // Optionally: if you want to animate height instead of show/hide,
-    // you can use max-height transitions here. For now we just toggle display via class.
   });
 </script>
