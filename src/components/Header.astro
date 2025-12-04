@@ -7,7 +7,6 @@
     />
   </a>
 
-  <!-- DESKTOP MENU -->
   <div class="menu">
     <nav class="desktop-nav">
       <ul>
@@ -21,10 +20,8 @@
     </nav>
   </div>
 
-  <!-- MOBILE BURGER BUTTON -->
   <button class="burger" aria-label="Open menu">☰</button>
 
-  <!-- MOBILE MENU PANEL -->
   <div class="mobile-menu">
     <div class="mobile-menu-header">
       <button class="close" aria-label="Close menu">✕</button>
@@ -57,6 +54,12 @@
 </header>
 
 <style>
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   .header {
     position: fixed;
     top: 0;
@@ -123,6 +126,11 @@
     display: none;
   }
 
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
   @media (max-width: 900px) {
     .menu {
       display: none !important;
@@ -169,6 +177,8 @@
       flex-direction: column;
       transition: right 0.35s ease;
       box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .mobile-menu.open {
@@ -180,6 +190,7 @@
       justify-content: flex-end;
       padding: 1rem;
       border-bottom: 1px solid #d9d9d9;
+      flex-shrink: 0;
     }
 
     .close {
@@ -188,6 +199,11 @@
       font-size: 2rem;
       color: var(--color-header-green);
       cursor: pointer;
+    }
+
+    .mobile-nav {
+      flex: 1;
+      overflow-y: auto;
     }
 
     .mobile-nav ul {
@@ -202,17 +218,17 @@
 
     .mobile-nav a {
       display: block;
-      padding: 1.2rem 1.5rem;
+      padding: 1rem 1rem;
       text-decoration: none;
       color: var(--color-header-green);
       font-weight: 500;
-      font-size: 1.1rem;
+      font-size: var(--font-size-s);
     }
 
     .menu-illustration {
-      display: block;
       padding: 2rem 0;
       text-align: center;
+      flex-shrink: 0;
     }
 
     .menu-illustration img {
@@ -221,10 +237,10 @@
     }
 
     .menu-social {
-      margin-top: auto;
       padding: 2rem 1rem;
       text-align: center;
       border-top: 1px solid #e5e5e5;
+      flex-shrink: 0;
     }
 
     .menu-social p {
@@ -245,10 +261,12 @@
 
   burger.addEventListener("click", () => {
     mobileMenu.classList.add("open");
+    document.body.classList.add("no-scroll");
   });
 
   closeBtn.addEventListener("click", () => {
     mobileMenu.classList.remove("open");
+    document.body.classList.remove("no-scroll");
   });
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -256,7 +274,6 @@
     document.querySelectorAll("nav a").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === currentPath) link.classList.add("active");
-
       const gaardsalgPages = ["/gaardsalg", "/halloween", "/hjemmelavedevarer"];
       if (gaardsalgPages.includes(currentPath) && href === "/gaardsalg") {
         link.classList.add("active");
