@@ -103,7 +103,7 @@ a {
   background: white;
   color: black;
   border-radius: 5px;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.5rem;
   font-size: var(--font-size-s);
   display: inline-block;
   margin-top: 0.75rem;
@@ -112,6 +112,19 @@ a {
 
 .white-button:hover {
   background-color: var(--color-button-hover);
+}
+
+.return-button {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  padding: 0.25rem 2rem;
+  border-radius: 10px;
+  text-decoration: none !important;
+}
+
+.return-button:hover {
+  scale: 1.05;
 }
 
 .strawberry {

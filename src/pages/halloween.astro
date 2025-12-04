@@ -6,7 +6,8 @@ import Layout from "../layouts/Layout.astro";
   <!-- text and images section -->
   <section class="two-columns content">
     <div class="column-text">
-      <h2>Græskarhøst på Esromgaard</h2>
+      <a class="return-button" href="/gaardsalg">🡨</a>
+      <h2 class="title">Græskarhøst på Esromgaard</h2>
       <p>
         Efteråret på Esromgaard er noget helt særligt. Når markerne står fyldt
         med store, små, skæve, runde og dyborange græskar, inviterer vi hele
@@ -63,9 +64,15 @@ import Layout from "../layouts/Layout.astro";
       />
     </div>
   </section>
+  <div class="content banner_halloween">
+    <img src="/images/graeskar_banner.webp" alt="Kort over græskarsalget" />
+  </div>
 </Layout>
 
 <style>
+  .title {
+    margin-top: 5%;
+  }
   .larger-text {
     font-size: var(--font-size-m);
     margin-bottom: 1.5rem;
@@ -119,5 +126,9 @@ import Layout from "../layouts/Layout.astro";
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
+  }
+
+  .banner_halloween {
+    margin-bottom: 5%;
   }
 </style>
