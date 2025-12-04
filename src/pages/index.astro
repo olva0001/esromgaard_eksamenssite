@@ -5,25 +5,16 @@ import Instagram from "../components/Instagram.astro";
 
 <Layout>
   <div slot="hero" class="hero">
-    <img src="/images/esromgaard_hero.webp" alt="Hero Image" />
+    <div class="title">
+      <h1 class="frugt_title_font">Esromgaard</h1>
+      <h2 class="frugt_title_font">- Smagen af sommer</h2>
+    </div>
+    <div class="hero-image">
+      <img src="/images/esromgaard_hero.webp" alt="Hero Image" />
+    </div>
   </div>
 
   <div class="content">
-    <div class="intro-title">
-      <div>
-        <h1>Esromgaard</h1>
-        <h2>- Smagen af sommer</h2>
-      </div>
-      <div>
-        <img
-          class="strawberry-fit-content"
-          src="/public/images/strawberry_icon.svg"
-          alt="strawberry icon"
-        />
-      </div>
-    </div>
-    <hr />
-
     <!-- INTRO SECTION -->
     <section class="intro-section">
       <div class="intro-grid">
@@ -126,11 +117,24 @@ import Instagram from "../components/Instagram.astro";
 </Layout>
 
 <style>
+  .title {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+
+  .frugt_title_font {
+    color: white;
+  }
   .hero {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   }
 
   .hero img {
@@ -139,38 +143,9 @@ import Instagram from "../components/Instagram.astro";
     object-fit: cover;
     display: block;
   }
-
-  .intro-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-top: 4rem;
-  }
-
-  .intro-title > div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .intro-title h1,
-  .intro-title h2 {
-    margin: 0;
-    line-height: 1.05;
-  }
-
-  .intro-title > div:last-child {
-    display: flex;
-    align-items: stretch;
-  }
-
-  hr {
-    color: var(--color-underline);
-    margin-bottom: 6rem;
-  }
-
   /* INTRO SECTION */
   .intro-section {
+    margin-top: 5%;
     margin-bottom: 4rem;
   }
 
