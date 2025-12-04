@@ -1,17 +1,15 @@
----
-
----
-
 <header class="header">
-  <a href="/"
-    ><img
+  <a href="/">
+    <img
       src="/images/esromgaard_logo.webp"
       alt="Esromgaard Logo"
       class="logo"
-    /></a
-  >
+    />
+  </a>
+
+  <!-- DESKTOP MENU -->
   <div class="menu">
-    <nav>
+    <nav class="desktop-nav">
       <ul>
         <li><a href="/frugt">FRUGT OG GRØNT</a></li>
         <li><a href="/salgssteder">SALGSSTEDER</a></li>
@@ -22,6 +20,40 @@
       </ul>
     </nav>
   </div>
+
+  <!-- MOBILE BURGER BUTTON -->
+  <button class="burger" aria-label="Open menu">☰</button>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <button class="close" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="/">FORSIDE</a></li>
+        <li><a href="/frugt">FRUGT OG GRØNT</a></li>
+        <li><a href="/salgssteder">SALGSSTEDER</a></li>
+        <li><a href="/gaardsalg">GÅRDSALGET</a></li>
+        <li><a href="/omgaarden">OM GÅRDEN</a></li>
+        <li><a href="/findvej">FIND VEJ</a></li>
+        <li><a href="/job">JOB</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-illustration">
+      <img src="/images/strawberry_line.svg" alt="strawberry illustration" />
+    </div>
+
+    <div class="menu-social">
+      <p>Følg os på sociale medier</p>
+      <div class="icons">
+        <a href="#"><img src="/images/facebook.webp" /></a>
+        <a href="#"><img src="/images/instagram.webp" /></a>
+      </div>
+    </div>
+  </div>
 </header>
 
 <style>
@@ -30,11 +62,14 @@
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     background-color: white;
   }
@@ -44,20 +79,18 @@
     line-height: 0;
   }
 
-  .menu {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   .logo {
-    width: auto;
     height: 50px;
+    width: auto;
   }
 
-  nav ul {
+  .menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .desktop-nav ul {
     display: flex;
     gap: 2rem;
     list-style: none;
@@ -65,16 +98,16 @@
     padding: 0;
   }
 
-  nav a {
+  .desktop-nav a {
     text-decoration: none;
     color: var(--color-header-green);
     font-weight: 500;
     font-size: var(--font-size-s);
-    position: relative;
     padding-left: 1rem;
+    position: relative;
   }
 
-  nav a.active::before {
+  .desktop-nav a.active::before {
     content: "▶";
     position: absolute;
     left: 0;
@@ -84,21 +117,147 @@
     font-size: 0.9rem;
     font-weight: 700;
   }
+
+  .burger,
+  .mobile-menu {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .menu {
+      display: none !important;
+      flex: 0 !important;
+      width: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .header {
+      padding: 1rem 1.2rem;
+      min-height: 64px;
+      overflow: hidden;
+    }
+
+    .logo {
+      height: 48px !important;
+      flex-shrink: 0;
+    }
+
+    .burger {
+      display: block !important;
+      background: none;
+      border: none;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--color-header-green);
+      cursor: pointer;
+      flex-shrink: 0;
+      width: 44px;
+      margin-left: auto;
+      padding: 0.2rem 0;
+      text-align: right;
+    }
+
+    .mobile-menu {
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      height: 100vh;
+      background: white;
+      z-index: 2000;
+      flex-direction: column;
+      transition: right 0.35s ease;
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-menu.open {
+      right: 0;
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+      border-bottom: 1px solid #d9d9d9;
+    }
+
+    .close {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: var(--color-header-green);
+      cursor: pointer;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mobile-nav li {
+      border-bottom: 1px solid #dcdcdc;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      text-decoration: none;
+      color: var(--color-header-green);
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .menu-illustration {
+      display: block;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .menu-illustration img {
+      width: 120px;
+      opacity: 0.6;
+    }
+
+    .menu-social {
+      margin-top: auto;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .menu-social p {
+      margin-bottom: 1rem;
+    }
+
+    .menu-social .icons img {
+      width: 45px;
+      margin: 0 0.5rem;
+    }
+  }
 </style>
 
 <script>
+  const burger = document.querySelector(".burger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const closeBtn = document.querySelector(".close");
+
+  burger.addEventListener("click", () => {
+    mobileMenu.classList.add("open");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
     const currentPath = window.location.pathname;
-
     document.querySelectorAll("nav a").forEach((link) => {
       const href = link.getAttribute("href");
-
-      if (href === currentPath) {
-        link.classList.add("active");
-      }
+      if (href === currentPath) link.classList.add("active");
 
       const gaardsalgPages = ["/gaardsalg", "/halloween", "/hjemmelavedevarer"];
-
       if (gaardsalgPages.includes(currentPath) && href === "/gaardsalg") {
         link.classList.add("active");
       }
