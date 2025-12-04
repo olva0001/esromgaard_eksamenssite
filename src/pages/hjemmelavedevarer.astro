@@ -2,4 +2,173 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
+<Layout>
+  <section class="content">
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <div class="intro-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <a class="return-button" href="/gaardsalg">🡨</a>
+          <h1>Hjemmelavede specialiter</h1>
+          <p>
+            I gårdsalget finder du også vores udvalg af hjemmeproducerede
+            specialiteter, som er fremstillet med samme omhu og kærlighed som
+            vores friskhøstede råvarer. Her kan du gå på opdagelse i både grød,
+            syltetøj, frysetørrede jordbær og marmelader, der alle bevarer den
+            rene og naturlige smag af de bær og frugter, de er lavet af.
+            Derudover finder du vores populære sirupper, som vi giver et ekstra
+            aromatisk løft ved at tilsætte udvalgte smage — blandt andet
+            citronskræl, vanilje og lakrids. Resultatet er en serie
+            kvalitetsprodukter, der passer perfekt til alt fra morgenbordet og
+            desserter til små hyggestunder i hverdagen.
+          </p>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="intro-image">
+          <img
+            src="/images/hjemmelavet_3.webp"
+            alt="billede af hjemmelavede varer"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- 3 CARDS SECTION -->
+    <section class="salgssteder-cards">
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="/images/frysetoerret.webp"
+            alt="billede af frysetørrede jordbær"
+          />
+        </div>
+        <h3>Frysetørrede jordbær</h3>
+        <p>
+          Vores frysetørrede jordbær er lavet af håndplukkede sorter dyrket på
+          Esromgaard. De bevarer den rene, intense jordbærsmag og sprøde tekstur
+          — ideelle til yoghurt, müsli, bagværk eller som lille sød snack.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="/images/marmelade.webp"
+            alt="billede af hjemmelavet marmelade"
+          />
+        </div>
+        <h3>Marmelade</h3>
+        <p>
+          Vores marmelade koges i små portioner af håndplukkede bær, så smagen
+          forbliver fyldig, frisk og naturlig. Perfekt til morgenbord, bagværk
+          eller desserter, hvor et enkelt sødt løft gør hele forskellen.
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="/images/groed.webp"
+            alt="billede af hjemmelavet jordbær grød"
+          />
+        </div>
+        <h3>Grød</h3>
+        <p>
+          Vores grød laves efter traditionel opskrift med frugt eller bær fra
+          egne marker. Den er klar til servering og giver en mild, fyldig og
+          frugtrig oplevelse — oplagt til morgenmad eller en nem dessert.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/sirup.webp" alt="billede af hjemmelavet sirup" />
+        </div>
+        <h3>Sirup</h3>
+        <p>
+          Vores sirupper skabes på gårdens egne råvarer med smagsvarianter som
+          citronskal, vanilje eller lakrids. De tilføjer et aromatisk løft til
+          pandekager, is, bagværk eller drinks.
+        </p>
+      </div>
+    </section>
+  </section>
+
+  <style>
+    /* INTRO SECTION */
+    .intro-section {
+      margin-top: 10%;
+      margin-bottom: 4rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+      align-items: start;
+    }
+
+    .intro-text {
+      line-height: var(--line-height-body);
+      font-size: var(--font-size-s);
+    }
+
+    .intro-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      align-self: stretch;
+      min-width: 0;
+    }
+
+    .intro-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom;
+      display: block;
+    }
+
+    /* 3 CARDS SECTION */
+    .salgssteder-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2.5%;
+      margin-top: 5rem;
+      margin-bottom: 10%;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      font-size: var(--font-size-s);
+      height: 100%;
+    }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card .green-button {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .card p {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</Layout>

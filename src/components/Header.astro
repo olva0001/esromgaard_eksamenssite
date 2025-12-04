@@ -91,7 +91,15 @@
     const currentPath = window.location.pathname;
 
     document.querySelectorAll("nav a").forEach((link) => {
-      if (link.getAttribute("href") === currentPath) {
+      const href = link.getAttribute("href");
+
+      if (href === currentPath) {
+        link.classList.add("active");
+      }
+
+      const gaardsalgPages = ["/gaardsalg", "/halloween", "/hjemmelavedevarer"];
+
+      if (gaardsalgPages.includes(currentPath) && href === "/gaardsalg") {
         link.classList.add("active");
       }
     });

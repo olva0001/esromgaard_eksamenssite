@@ -123,10 +123,6 @@ a {
   text-decoration: none !important;
 }
 
-.return-button:hover {
-  scale: 1.05;
-}
-
 .strawberry {
   width: 10rem;
   height: auto;
