@@ -1,19 +1,14 @@
----
-
----
-
 <footer>
   <div class="top">
     <div class="content top-content">
-      <div>
-        <a href="/"
-          ><img
-            src="/public/images/esromgaard_logo.webp"
-            alt="Esromgaard Logo"
-            class="logo"
-          /></a
-        >
-      </div>
+      <a href="/">
+        <img
+          src="/public/images/esromgaard_logo.webp"
+          alt="Esromgaard Logo"
+          class="logo"
+        />
+      </a>
+
       <div class="footer-cta">
         <p>Kunne du tænke dig frisk frugt og grønt?</p>
         <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
@@ -26,67 +21,55 @@
     <div class="content bottom-content">
       <div class="footer-contact">
         <div>
-          <strong>KONTAKTOPLYSNINGER:</strong>
-        </div>
-        <div>
           <strong>Adresse:</strong>
           <p>Frederiksværksvej 11, 3230 Græsted</p>
           <a href="/findvej" class="white-button">Find vej</a>
         </div>
+
         <div>
           <strong>Mail:</strong>
           <a href="mailto:info@esromgaard.dk">info@esromgaard.dk</a>
         </div>
+
         <div>
           <strong>Tlf:</strong>
           <p>+45 11 22 33 44</p>
         </div>
-      </div>
-      <div class="footer-2-columns">
+
         <div>
-          <div class="footer-social">
-            <div>
-              <p>Følg os på sociale medier</p>
-              <div class="footer-social-icons">
-                <a
-                  href="https://www.facebook.com/esromgaard/?locale=da_DK"
-                  target="_blank"
-                >
-                  <img
-                    src="/public/images/facebook_icon.svg"
-                    alt="facebook ikon der fører til esromgaards facebookside"
-                  />
-                </a>
-                <a
-                  href="https://www.instagram.com/esromgaard/?hl=da"
-                  target="_blank"
-                >
-                  <img
-                    src="/public/images/instagram_icon.svg"
-                    alt="instagram ikon der fører til esromgaards instagramside"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="footer-kontrolrapport">
-            <p>Læs kontrolrapporten</p>
-            <a href="https://www.findsmiley.dk/719157" target="_blank">
+          <strong>Sociale medier:</strong>
+          <div class="footer-social-icons">
+            <a
+              href="https://www.facebook.com/esromgaard/?locale=da_DK"
+              target="_blank"
+            >
+              <img src="/public/images/facebook_icon.svg" alt="facebook ikon" />
+            </a>
+            <a
+              href="https://www.instagram.com/esromgaard/?hl=da"
+              target="_blank"
+            >
               <img
-                src="/public/images/kontrolrapport_icon.svg"
-                alt="Link til kontrolrapporten fra fødevarestyrelsen"
+                src="/public/images/instagram_icon.svg"
+                alt="instagram ikon"
               />
             </a>
           </div>
         </div>
-        <div>
-          <img
-            class="strawberry"
-            src="/public/images/strawberry_icon.svg"
-            alt="jordbær ikon"
-          />
+
+        <div class="footer-kontrolrapport">
+          <strong>Kontrolrapport:</strong>
+          <a href="https://www.findsmiley.dk/719157" target="_blank">
+            <img
+              src="/public/images/kontrolrapport_icon.svg"
+              alt="kontrolrapport link"
+            />
+          </a>
         </div>
       </div>
+
+      <div class="footer-decoration-spacer"></div>
+
       <div class="footer-copyright">
         <p>Copyright © 2025 Esromgaard</p>
       </div>
@@ -104,8 +87,7 @@
   }
 
   .top,
-  .bottom,
-  .back {
+  .bottom {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
   }
@@ -120,85 +102,72 @@
 
   .top-content {
     display: flex;
-    gap: 4rem;
     align-items: center;
-    margin: 1rem 0;
+    justify-content: space-between;
+    padding: 1.5rem 0;
   }
 
   .footer-cta {
-    align-items: center;
     display: flex;
+    align-items: center;
     gap: 1rem;
     color: white;
+    font-size: var(--font-size-s);
   }
 
   .logo {
+    height: 55px;
     width: auto;
-    height: 50px;
   }
 
   .bottom-content {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
     color: white;
   }
 
   .footer-contact {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    align-items: start;
-    padding: 1rem 0;
-    color: white;
+    gap: 2rem;
   }
 
   .footer-contact strong {
-    font-size: var(--font-size-s);
-    color: white;
     display: block;
-    margin-bottom: 0.25rem;
-  }
-
-  .footer-contact p {
-    margin: 0;
-    color: white;
+    margin-bottom: 0.4rem;
     font-size: var(--font-size-s);
   }
 
+  .footer-contact p,
   .footer-contact a {
-    text-decoration: none;
     font-size: var(--font-size-s);
     color: white;
   }
 
-  .footer-contact .white-button {
-    margin-top: 0.75rem;
-    color: #000 !important;
-    text-decoration: none !important;
-  }
-
-  .footer-social {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 10rem;
+  .white-button {
+    color: black !important;
   }
 
   .footer-social-icons {
     display: flex;
     gap: 1rem;
+    margin-top: 0.4rem;
+  }
+
+  .footer-kontrolrapport img {
+    margin-top: 0.4rem;
+    width: 50%;
+    height: auto;
+  }
+
+  .footer-decoration-spacer {
+    height: 0;
   }
 
   .footer-copyright {
-    margin-top: auto;
-    padding: 1rem 0;
     text-align: center;
     font-size: var(--font-size-s);
-  }
-
-  .footer-2-columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
 </style>

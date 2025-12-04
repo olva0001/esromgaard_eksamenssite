@@ -2,4 +2,161 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
+<Layout>
+  <div class="content">
+    <div class="intro-title">
+      <div>
+        <h1>Er du vores nye jordbærsælger?</h1>
+        <h2>- Vi søger sælgere til sommersæsonen juni og juli 2026</h2>
+      </div>
+      <div>
+        <img
+          class="strawberry-fit-content"
+          src="/public/images/strawberry_icon.svg"
+          alt="strawberry icon"
+        />
+      </div>
+    </div>
+    <hr />
+  </div>
+
+  <!-- text and images section -->
+  <section class="two-columns content">
+    <div class="column-text">
+      <p class="larger-text">
+        <strong
+          >Er du studerende, nybagt student, hjemvendt fra et gap-year - eller
+          noget helt fjerde?</strong
+        >
+      </p>
+      <p>
+        Hvis du har lyst til at arbejde med salg - så kan du blive en del af
+        Esromgaards jordbærhold i perioden 1. juni - 31. juli 2026. Du kommer
+        til at sælge de friske råvarer, vi selv dyrker og høster dagligt på
+        Esromgaards marker.Hvis du synes, det er sjovt at sælge - eller gerne
+        vil lære det - og du møder dagen med energi og et smil, er det måske
+        lige dig, vi søger.
+      </p>
+      <p class="larger-text"><strong>Vi tilbyder:</strong></p>
+      <ul>
+        <li>God timeløn.</li>
+        <li>Fleksibilitet i forhold til arbejdstimer, vagter og location</li>
+        <li>
+          Mulighed for at kombinere salgsjobbet i gårdsalgene med kørsel som
+          chauffør
+        </li>
+        <li>Frokostordning</li>
+        <li>
+          Et godt arbejdsmiljø med frisk luft, søde kollegaer og de bedste
+          kunder
+        </li>
+      </ul>
+      <p>
+        <strong>Lokationer:</strong> Esromgaard, Gilleleje Havn Har du spørgsmål
+        eller ønsker du at høre mere om jobbet, er du velkommen til at ringe på 51
+        25 30 60.
+      </p>
+      <p>
+        <strong
+          >Send din ansøgning - gerne med et kort CV eller en besked om, at du
+          ønsker at blive ringet op - til: <a href="mailto:job@esromgaard.dk"
+            >job@esromgaard.dk</a
+          ></strong
+        >
+      </p>
+    </div>
+    <div class="column-images">
+      <img
+        class="top-image"
+        src="/images/gaard_skilt.webp"
+        alt="billede af gård skilt"
+      />
+      <img
+        class="bottom-image"
+        src="/images/job_billede.webp"
+        alt="billede af en esromgaard hættetrøje og jordbær"
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 10%;
+  }
+
+  .intro-title > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro-title h1,
+  .intro-title h2 {
+    margin: 0;
+    line-height: 1.05;
+  }
+
+  .intro-title h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro-title > div:last-child {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .larger-text {
+    font-size: var(--font-size-m);
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  p {
+    font-size: var(--font-size-s);
+  }
+
+  ul li {
+    font-size: var(--font-size-s);
+  }
+
+  hr {
+    color: var(--color-underline);
+    margin-bottom: 6rem;
+  }
+
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5%;
+  }
+
+  .column-images {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .top-image {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .bottom-image {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+</style>

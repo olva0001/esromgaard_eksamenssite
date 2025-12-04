@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <!-- text and images section -->
+  <section class="two-columns content">
+    <div class="column-text">
+      <h2>Græskarhøst på Esromgaard</h2>
+      <p>
+        Efteråret på Esromgaard er noget helt særligt. Når markerne står fyldt
+        med store, små, skæve, runde og dyborange græskar, inviterer vi hele
+        familien til en hyggelig dag på landet med oplevelser, aktiviteter og
+        masser af høststemning.
+      </p>
+      <p class="larger-text">
+        <strong>Pluk-selv græskar i marken</strong>
+      </p>
+      <p>
+        Tag familien med ud i vores græskarmarker, hvor I kan gå på opdagelse
+        mellem tusindvis af græskar og finde netop jeres favoritter. Her er både
+        pyntegræskar, store Halloween-græskar og dekorative specialsorter. Det
+        er en ideel aktivitet for både børn og voksne, der holder af at være ude
+        og mærke efteråret tæt på.
+      </p>
+      <p class="larger-text">
+        <strong>Græskarskæring i Den Store Røde Lade</strong>
+      </p>
+      <p>
+        Når I har valgt jeres græskar, kan I fortsætte hyggen i Den Store Røde
+        Lade, hvor der er mulighed for at skære ansigter, mønstre og flotte
+        figurer. Vi sørger for borde, redskaber og en hyggelig ramme – I skal
+        blot udfolde jeres kreativitet.
+      </p>
+      <p class="larger-text">
+        <strong> Majslabyrint og efterårsstemning</strong>
+      </p>
+      <p>
+        Ud over græskarmarken byder Esromgaard også på en stor majslabyrint,
+        hvor både store og små kan få en sjov udfordring. Dagen kan rundes af
+        med varme drikke, efterårssuppe eller hjemmebag fra vores caféområde,
+        mens I nyder udsigten over gårdens smukke omgivelser.
+      </p>
+      <p class="larger-text">
+        <strong>Åbningstider og praktisk information</strong>
+      </p>
+      <p>
+        Græskarsalget åbner hvert år i efterårssæsonen. Hold øje med aktuelle
+        åbningstider, aktiviteter og eventuelle udsolgt-meldinger her på
+        hjemmesiden eller på vores sociale medier.
+      </p>
+    </div>
+    <div class="column-images">
+      <img
+        class="top-image"
+        src="/images/graeskar_1.webp"
+        alt="billede af fugleskræmsel"
+      />
+      <img
+        class="bottom-image"
+        src="/images/graeskar_2.webp"
+        alt="billede af græskar"
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .larger-text {
+    font-size: var(--font-size-m);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    color: var(--color-heading-h1) !important;
+  }
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  p {
+    font-size: var(--font-size-s);
+  }
+
+  ul li {
+    font-size: var(--font-size-s);
+  }
+
+  hr {
+    color: var(--color-underline);
+    margin-bottom: 6rem;
+  }
+
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5%;
+    margin-top: 10%;
+  }
+
+  .column-images {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .top-image {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .bottom-image {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+</style>

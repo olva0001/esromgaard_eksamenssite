@@ -1,5 +1,114 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import LeafletMap from "../components/LeafletMap.astro";
 ---
 
-<Layout />
+<Layout>
+  <section class="content">
+    <section class="intro-section">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <h1>Find vej til Esromgaard</h1>
+          <p>
+            Esromgaard ligger i det naturskønne Kongernes Nordsjælland, let
+            tilgængelig i bil fra hele området. Fra Gilleleje tager turen
+            omkring 10 minutter, fra Fredensborg ca. 20 minutter, fra Hillerød
+            ca. 25 minutter og fra Helsingør omkring 30 minutter. Placeringen
+            gør gården nem at besøge, uanset om du kommer nordfra, sydfra eller
+            fra kystbyerne.
+          </p>
+          <p>
+            På kortet kan du se præcis, hvor Esromgaard ligger. Du kan også
+            bruge knappen til at åbne rutevejledning i Google Maps, så du
+            hurtigt kan vælge den mest direkte og bekvemme vej hertil.
+          </p>
+          <p>Vi glæder os til at se dig i gårdsalget.</p>
+          <a
+            class="green-button"
+            href="https://maps.app.goo.gl/Fi2BMmHco4WWQZ4H9"
+            target="_blank">Åbn i Google Maps</a
+          >
+        </div>
+
+        <div class="map-container">
+          <LeafletMap />
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Du er fremme, når du mødes af dette fine skilt - velkommen!</h2>
+      <hr />
+      <div class="two-c-grid">
+        <div class="column-one">
+          <img
+            src="/images/gaard_skilt.webp"
+            alt="Billede af skilt ved indkørsel til Esromgaard"
+          />
+        </div>
+        <div class="column-two">
+          <img src="/images/strawberry_icon.svg" alt="" />
+        </div>
+      </div>
+    </section>
+  </section>
+</Layout>
+
+<style>
+  .intro-section {
+    margin-bottom: 4rem;
+    margin-top: 10%;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: start;
+  }
+
+  .intro-text {
+    min-width: 0;
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-s);
+  }
+
+  .intro-text a {
+    margin-top: 2rem;
+    display: inline-block;
+  }
+
+  .map-container {
+    align-self: stretch;
+    min-width: 0;
+    height: 100%;
+  }
+
+  .two-c-grid {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+
+  .column-one {
+    width: 50%;
+  }
+
+  .column-one img {
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .column-two {
+    width: 50%;
+    position: relative;
+  }
+
+  .column-two img {
+    position: absolute;
+    left: 50%;
+    width: 30%;
+    height: auto;
+  }
+</style>

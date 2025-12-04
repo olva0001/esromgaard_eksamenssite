@@ -4,9 +4,170 @@ import Instagram from "../components/Instagram.astro";
 ---
 
 <Layout>
+  <section class="content">
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <div class="intro-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <h1>Sommerens gårdsalg</h1>
+          <p><strong>Vi har LUKKET for sommeren i Gårdsalget</strong></p>
+
+          <p>
+            Når vi åbner i gårdsalget kan du hver dag hele sommeren købe friske
+            jordbær, og hvad vi ellers har høstet friskt fra marken den dag, du
+            kigger forbi. Du kan også finde syltevarer, frysetørrede jordbær og
+            hvad vi ellers finder på i løbet af sommeren.
+          </p>
+
+          <p>Frederiksværksvej 11, 3230 Græsted</p>
+
+          <a href="/findvej" class="green-button">Find vej</a>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="intro-image">
+          <img
+            src="/images/kartofler_vaegt.webp"
+            alt="Jordbær fra Esromgaard"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- 2 CARDS SECTION -->
+    <section class="salgssteder-cards">
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/asparges_3.webp" alt="billede af asparges" />
+        </div>
+        <h3>Frugt og Grønt</h3>
+        <p>
+          Solmodne jordbær, friske asparges, knasende ærter, rabarber og
+          kartofler høstet hver dag. Esromgaard dyrker alt under åben himmel, så
+          smagen af sommer følger med helt hjem.
+        </p>
+        <a class="green-button" href="/frugt">Se hele udvalget</a>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="/images/hjemmelavet_3.webp"
+            alt="billede af hjemmelavede varer"
+          />
+        </div>
+        <h3>Hjemmelavede varer</h3>
+        <p>
+          I gårdsalget finder du også vores hjemmeproduktion af grød, syltetøj,
+          frysetørrede jordbær, marmelade og sirup tilsat forskellige smage
+          såsom citronskræl, vanilje eller lakrids.
+        </p>
+        <a class="green-button" href="/hjemmelavedevarer">Se hele udvalget</a>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/graeskar.webp" alt="billede af græskar" />
+        </div>
+        <h3>Halloween Græskar</h3>
+        <p>
+          Esromgaards efterårsgræskarsalg byder på pluk-selv i marken,
+          græskarskæring i Den Store Røde Lade og hyggelige aktiviteter for hele
+          familien i naturskønne omgivelser, med stemning, efterårshygge og
+          mulighed for kreative oplevelser.
+        </p>
+        <a class="green-button" href="/halloween">Læs mere</a>
+      </div>
+    </section>
+  </section>
   <section class="full-bleed">
     <Instagram />
   </section>
 </Layout>
 
-<style></style>
+<style>
+  /* INTRO SECTION */
+  .intro-section {
+    margin-top: 10%;
+    margin-bottom: 4rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: start;
+  }
+
+  .intro-text {
+    min-width: 0;
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-s);
+  }
+
+  .intro-text a {
+    margin-top: 2rem;
+    display: inline-block;
+  }
+
+  .intro-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .intro-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+  }
+
+  /* 3 CARDS SECTION */
+  .salgssteder-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5%;
+    margin-top: 5rem;
+    margin-bottom: 10%;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-s);
+    height: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card .green-button {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .card p {
+    margin-bottom: 1.5rem;
+  }
+
+  .full-bleed {
+    margin-bottom: 5%;
+  }
+</style>

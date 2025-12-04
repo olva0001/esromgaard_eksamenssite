@@ -33,7 +33,7 @@
   --color-underline: #bac1a8;
 
   /* Optional line heights */
-  --line-height-body: 1.8;
+  --line-height-body: 2;
   --line-height-heading: 1.2;
 }
 
@@ -129,8 +129,34 @@ a {
 
 .banner {
   width: 100%;
-  height: auto;
+  height: 80%;
   object-fit: cover;
   display: block;
-  margin: 3rem 0 3rem 0;
+  margin: 3rem 0 0 0;
+}
+
+header,
+.site-header,
+.header,
+.navbar {
+  position: relative;
+  z-index: 999;
+}
+
+.leaflet-container,
+.leaflet-pane,
+.leaflet-pane .leaflet-control,
+.leaflet-control-container,
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-popup,
+.leaflet-popup-pane,
+.leaflet-marker-pane,
+.leaflet-shadow-pane,
+.leaflet-overlay-pane,
+.leaflet-tile-pane,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  z-index: 1 !important;
 }

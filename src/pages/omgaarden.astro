@@ -2,4 +2,165 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
+<Layout>
+  <div slot="hero" class="hero">
+    <img src="/images/esromgaard_hero.webp" alt="Hero Image" />
+  </div>
+  <section class="content">
+    <div class="intro-title">
+      <div>
+        <h2>Fra klosterjorde til berømte sommerbær</h2>
+      </div>
+    </div>
+    <hr />
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <div class="intro-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <h3>Esromgaard gennem 900 år</h3>
+          <p>
+            Esromgaard ligger midt i det naturskønne område Kongernes
+            Nordsjælland, omgivet af skove, søer og et kulturlandskab, der
+            gennem århundreder har været præget af både klostervæsen og kongelig
+            historie. Gården regnes som Danmarks næstældste større landbrug og
+            kan spores helt tilbage til år 1151, hvor jorderne fungerede som
+            klosterjord under Esrum Kloster. I 1551 blev ejendommen omdannet til
+            Avlsgård, en central del af klosterets omfattende landbrugsdrift,
+            som den forblev frem til 1852. På dette tidspunkt blev gården solgt
+            på auktion efter klosterets opløsning, og siden da har Esromgaard
+            haft en række forskellige private ejere, der hver især har sat deres
+            præg på stedet og dets historie.
+          </p>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="intro-image first_image">
+          <img src="/images/hus_3.webp" alt="Jordbær fra Esromgaard" />
+        </div>
+      </div>
+    </section>
+    <section class="intro-section">
+      <div class="intro-grid">
+        <!-- LEFT SIDE: IMAGE -->
+        <div class="intro-image">
+          <img src="/images/omgaarden_2.webp" alt="Gårdens ejere" />
+        </div>
+        <!-- RIGHT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <h3>Tredje generation på Esromgaard</h3>
+          <p>
+            I dag drives landbruget af Carl Frederik og Sindet Bruun, som er
+            tredje generation på Esromgaard. Carl Bruuns morfar Åge Lutzen købte
+            gården i 1932, og siden har den tilhørt familien. Carl Bruun overtog
+            gården i 1992. Når den travle sommer sætter ind, kan man også møde
+            parrets tre sønner i marken, i gårdsalget og i de lokale salgsboder.
+          </p>
+          <p>
+            Carl og Sindet Bruun har gennem de senere år udviklet produktionen
+            af jordbær, ærter, kartofler, asparges og rabarber, som sælges i
+            gårdsalget og lokale salgsboder.
+          </p>
+          <a class="green-button" href="/gaardsalg">Besøg gårdsalget</a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- full width banner -->
+  <section class="full-bleed">
+    <img class="banner" src="/images/banner_2.webp" alt="billede af jordbær" />
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .intro-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 5%;
+  }
+
+  .intro-title > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro-title h2 {
+    margin: 0;
+    line-height: 1.05;
+    color: var(--color-heading-h1) !important;
+  }
+
+  .intro-title > div:last-child {
+    display: flex;
+    align-items: stretch;
+  }
+
+  hr {
+    color: var(--color-underline);
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+  }
+
+  /* INTRO SECTION */
+  .intro-section {
+    margin-bottom: 4rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: start;
+  }
+
+  .intro-text {
+    min-width: 0;
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-s);
+  }
+
+  .intro-text a {
+    margin-top: 2rem;
+    display: inline-block;
+  }
+
+  .intro-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .intro-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+  }
+
+  .first_image img {
+    object-position: center;
+  }
+</style>
