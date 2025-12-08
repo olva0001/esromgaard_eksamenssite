@@ -4,7 +4,13 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <div slot="hero" class="hero">
-    <img src="/images/esromgaard_hero.webp" alt="Hero Image" />
+    <div class="title">
+      <h1 class="frugt_title_font">Esromgaard</h1>
+      <h2 class="frugt_title_font">- 900 års historie</h2>
+    </div>
+    <div class="hero-image">
+      <img src="/images/esromgaard_hero.webp" alt="Hero Image" />
+    </div>
   </div>
   <section class="content">
     <div class="intro-title">
@@ -75,6 +81,18 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+  .title {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+
+  .frugt_title_font {
+    color: white;
+  }
   .hero {
     width: 100vw;
     height: 100vh;
@@ -166,16 +184,21 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media (max-width: 900px) {
-    .hero {
-      display: block;
-      height: 50vh;
-      margin-top: 4rem;
+    .title {
+      display: none !important;
     }
 
-    .hero img {
-      width: 100%;
+    .hero {
+      height: 58vh !important;
+    }
+
+    .hero-image,
+    .hero > img {
       height: 100%;
-      object-fit: cover;
+    }
+
+    .hero-image img,
+    .hero img {
       object-position: center;
     }
 

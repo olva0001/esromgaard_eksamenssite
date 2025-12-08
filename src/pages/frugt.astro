@@ -186,14 +186,28 @@ import FrugtMobile from "../components/FrugtMobile.astro";
     .frugt-desktop {
       display: none;
     }
+    .title {
+      display: none !important;
+    }
+
     .hero {
-      display: none;
+      height: 58vh !important;
+    }
+
+    .hero-image,
+    .hero > img {
+      height: 100%;
+    }
+
+    .hero-image img,
+    .hero img {
+      object-position: center;
     }
 
     .mobile-title {
       display: flex;
       flex-direction: column;
-      margin-top: 7rem;
+      margin-top: 1rem;
       margin-bottom: 1.5rem;
       gap: 0.35rem;
     }
