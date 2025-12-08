@@ -1,30 +1,19 @@
 ---
-// Instagram.astro
+
 ---
 
 <section class="instagram-section">
   <div class="instagram-outer">
-    <!-- Inner box: narrow + centered on desktop; placed into grid on mobile -->
     <div class="instagram-inner">
-      <!-- LEFT: text -->
       <div class="instagram-info">
         <h2>Følg med på Esromgaards marker</h2>
-
         <p>
           Vil du holde dig opdateret på, hvad der er i sæson, og hvornår der er
           friske råvarer fra vores marker? På Facebook og Instagram deler vi
           løbende nyt om årets høst, aktuelle frugt- og grøntsagsudvalg samt
           praktisk information om vores populære pluk-selv jordbær.
         </p>
-
-        <p>
-          Følg os på sociale medier, så får du besked, når pluk-selv jordbær
-          åbner igen til næste år - og du går aldrig glip af, hvad der spirer og
-          gror på Esromgaard.
-        </p>
-
         <p>Find Esromgaard på både Facebook og Instagram</p>
-
         <div class="instagram-icons">
           <a
             href="https://www.facebook.com/esromgaard/?locale=da_DK"
@@ -43,7 +32,6 @@
         </div>
       </div>
 
-      <!-- RIGHT: embed -->
       <div class="instagram-embed">
         <blockquote
           class="instagram-media"
@@ -67,9 +55,9 @@
   }
 
   .instagram-outer {
-    /* default: */
   }
 
+  /* desktop: narrow centered box — restore previous desktop look */
   .instagram-inner {
     margin: 0 auto;
     max-width: 860px;
@@ -96,6 +84,7 @@
     width: 50px;
     margin-right: 1rem;
     vertical-align: middle;
+    display: inline-block;
   }
 
   .instagram-embed blockquote.instagram-media,
@@ -109,64 +98,42 @@
   }
 
   @media (max-width: 900px) {
-    .instagram-section {
-      padding: 2.5rem 0;
-    }
-
-    .instagram-outer {
-      display: grid;
-      grid-template-columns: repeat(11, 1fr);
-    }
-
     .instagram-inner {
-      grid-column: 2 / 11;
-      margin: 0;
-      max-width: none;
-      padding: 0 0.75rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .instagram-info {
       width: 100%;
-      font-size: var(--font-size-m);
-      line-height: 1.6;
-    }
-
-    .instagram-info h2 {
-      font-size: var(--font-size-xl);
-      margin-bottom: 0.5rem;
-    }
-
-    .instagram-icons img {
-      width: 34px;
-      margin-right: 0.75rem;
+      text-align: left;
     }
 
     .instagram-embed {
       width: 100%;
+      max-width: 600px;
       display: flex;
       justify-content: center;
       overflow: hidden;
     }
 
     .instagram-embed blockquote.instagram-media,
-    .instagram-embed blockquote.instagram-media iframe,
+    .instagram-embed iframe,
     .instagram-embed .instagram-media {
       min-width: 0 !important;
       width: 100% !important;
       max-width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
+      margin: 0 auto !important;
       box-sizing: border-box !important;
     }
 
-    .instagram-embed img,
-    .instagram-embed iframe {
-      width: 100% !important;
-      max-width: 100% !important;
-      height: auto !important;
-      display: block !important;
+    .instagram-icons img {
+      width: 34px;
     }
   }
 </style>
