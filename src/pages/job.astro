@@ -159,4 +159,34 @@ import Layout from "../layouts/Layout.astro";
     object-fit: cover;
     border-radius: 20px;
   }
+
+  @media (max-width: 900px) {
+    .strawberry-fit-content {
+      display: none;
+    }
+
+    hr {
+      display: none;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .intro-title {
+      gap: 0.5rem;
+      margin-top: 7rem;
+    }
+
+    .intro-title h1 {
+      font-size: clamp(2.5rem, 2.2rem + 2vw, 3.4rem) !important;
+      line-height: 1.2;
+    }
+
+    .intro-title h2 {
+      font-size: clamp(1.65rem, 1.35rem + 1.7vw, 2.25rem) !important;
+      line-height: 1.2;
+    }
+  }
 </style>
