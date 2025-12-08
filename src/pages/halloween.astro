@@ -131,4 +131,44 @@ import Layout from "../layouts/Layout.astro";
   .banner_halloween {
     margin-bottom: 5%;
   }
+
+  @media (max-width: 900px) {
+    .two-columns {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 6rem;
+    }
+
+    .return-button {
+      order: -3;
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .top-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .column-text {
+      order: -1;
+    }
+
+    .bottom-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-top: 1rem;
+    }
+
+    .banner_halloween img {
+      display: none;
+    }
+  }
 </style>
