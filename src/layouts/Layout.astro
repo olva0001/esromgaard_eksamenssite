@@ -42,6 +42,11 @@ import "../styles/global.css";
       <slot />
       <Footer />
     </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
   </body>
 </html>
 
@@ -57,5 +62,20 @@ import "../styles/global.css";
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("loaded");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (e.target.matches("img.lightbox-target")) {
+      const src = e.target.getAttribute("src");
+      const lightbox = document.getElementById("lightbox");
+      const img = document.getElementById("lightbox-img");
+
+      img.src = src;
+      lightbox.style.display = "flex";
+    }
+  });
+
+  document.getElementById("lightbox").addEventListener("click", function () {
+    this.style.display = "none";
   });
 </script>
