@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FrugtDesktop from "../components/FrugtDesktop.astro";
+import FrugtMobile from "../components/FrugtMobile.astro";
 ---
 
 <Layout>
@@ -67,12 +68,20 @@ import FrugtDesktop from "../components/FrugtDesktop.astro";
         </div>
       </section>
       <!-- FRUGT CATEGORIES SECTION -->
-      <FrugtDesktop />
+      <section class="frugt-desktop">
+        <FrugtDesktop />
+      </section>
+      <section class="frugt-mobile">
+        <FrugtMobile />
+      </section>
     </div>
   </div>
 </Layout>
 
 <style>
+  .frugt-mobile {
+    display: none;
+  }
   .hero {
     position: relative;
   }
@@ -171,6 +180,12 @@ import FrugtDesktop from "../components/FrugtDesktop.astro";
   }
 
   @media (max-width: 900px) {
+    .frugt-mobile {
+      display: block;
+    }
+    .frugt-desktop {
+      display: none;
+    }
     .hero {
       display: none;
     }
