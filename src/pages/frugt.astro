@@ -19,62 +19,58 @@ import FrugtMobile from "../components/FrugtMobile.astro";
 
   <!-- INTRO SECTION -->
   <div class="content">
-    <div class="mobile-title">
-      <h1>Håndplukket og frisk fra marken</h1>
-      <h2>- Jordbær, Asparges, Kartofler, Ærter og Rabarber</h2>
-      <section class="intro-section">
-        <div class="intro-grid">
-          <!-- LEFT SIDE: TEXT CONTENT -->
-          <div class="intro-text">
-            <h2 class="black-title">Friskere bliver det ikke</h2>
+    <section class="intro-section">
+      <div class="intro-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <h2 class="black-title">Friskere bliver det ikke</h2>
 
-            <p>
-              Vi sætter en stor ære i at levere friske jordbær til vores kunder,
-              og de jordbær, du køber i gårdsalget, er altid plukket samme
-              morgen. Også asparges, ærter, kartofler og rabarber kommer direkte
-              fra marken og ud til salgsstederne friske og fulde af smag.
-            </p>
+          <p>
+            Vi sætter en stor ære i at levere friske jordbær til vores kunder,
+            og de jordbær, du køber i gårdsalget, er altid plukket samme morgen.
+            Også asparges, ærter, kartofler og rabarber kommer direkte fra
+            marken og ud til salgsstederne friske og fulde af smag.
+          </p>
 
-            <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
-          </div>
-
-          <!-- RIGHT SIDE: IMAGE -->
-          <div class="intro-image">
-            <img
-              src="/images/kartofel_frugt.webp"
-              alt="Kartofel fra Esromgaard"
-            />
-          </div>
-        </div>
-      </section>
-      <!-- 3 CARDS SECTION -->
-      <section class="three-images-section">
-        <div>
-          <div class="three-images-image">
-            <img src="/images/asparges_frugt.webp" alt="billede af asparges" />
-          </div>
+          <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
         </div>
 
-        <div>
-          <div class="three-images-image">
-            <img src="/images/aerter_3.webp" alt="billede af ærter" />
-          </div>
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="intro-image">
+          <img
+            src="/images/kartofel_frugt.webp"
+            alt="Kartofel fra Esromgaard"
+          />
         </div>
+      </div>
+    </section>
+    <!-- 3 CARDS SECTION -->
+    <section class="three-images-section">
+      <div>
+        <div class="three-images-image">
+          <img src="/images/asparges_frugt.webp" alt="billede af asparges" />
+        </div>
+      </div>
 
-        <div>
-          <div class="three-images-image">
-            <img src="/images/rabarber_3.webp" alt="billede af rabarber" />
-          </div>
+      <div>
+        <div class="three-images-image">
+          <img src="/images/aerter_3.webp" alt="billede af ærter" />
         </div>
-      </section>
-      <!-- FRUGT CATEGORIES SECTION -->
-      <section class="frugt-desktop">
-        <FrugtDesktop />
-      </section>
-      <section class="frugt-mobile">
-        <FrugtMobile />
-      </section>
-    </div>
+      </div>
+
+      <div>
+        <div class="three-images-image">
+          <img src="/images/rabarber_3.webp" alt="billede af rabarber" />
+        </div>
+      </div>
+    </section>
+    <!-- FRUGT CATEGORIES SECTION -->
+    <section class="frugt-desktop">
+      <FrugtDesktop />
+    </section>
+    <section class="frugt-mobile">
+      <FrugtMobile />
+    </section>
   </div>
 </Layout>
 
@@ -186,9 +182,6 @@ import FrugtMobile from "../components/FrugtMobile.astro";
     .frugt-desktop {
       display: none;
     }
-    .title {
-      display: none !important;
-    }
 
     .hero {
       height: 58vh !important;
@@ -204,12 +197,10 @@ import FrugtMobile from "../components/FrugtMobile.astro";
       object-position: center;
     }
 
-    .mobile-title {
-      display: flex;
-      flex-direction: column;
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-      gap: 0.35rem;
+    .hero .title {
+      top: 55%;
+      left: 5%;
+      right: 5%;
     }
 
     .three-images-section {

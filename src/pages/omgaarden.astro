@@ -184,10 +184,6 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media (max-width: 900px) {
-    .title {
-      display: none !important;
-    }
-
     .hero {
       height: 58vh !important;
     }
@@ -203,8 +199,9 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .intro-title {
-      margin-top: 1rem;
-      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--color-underline);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
     hr {
@@ -212,6 +209,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .intro-section {
+      margin-top: 1rem;
       margin-bottom: 2rem;
     }
 
