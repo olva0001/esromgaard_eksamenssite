@@ -111,4 +111,28 @@ import LeafletMap from "../components/LeafletMap.astro";
     width: 30%;
     height: auto;
   }
+
+  @media (max-width: 900px) {
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .intro-section {
+      margin-top: 7rem;
+    }
+
+    .column-one {
+      width: 100%;
+    }
+
+    .column-one img {
+      width: 100%;
+    }
+
+    .column-two {
+      display: none;
+    }
+  }
 </style>
