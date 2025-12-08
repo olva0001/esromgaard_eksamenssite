@@ -20,6 +20,15 @@
   <div class="bottom">
     <div class="content bottom-content">
       <div class="footer-contact">
+        <div class="footer-cta-mobile">
+          <p class="bold">Kunne du tænke dig frisk frugt og grønt?</p>
+          <a href="/gaardsalg" class="green-button btn-reverse"
+            >Besøg gårdsalget</a
+          >
+          <a href="/salgssteder" class="green-button btn-reverse"
+            >Se alle salgssteder</a
+          >
+        </div>
         <div>
           <strong>Adresse:</strong>
           <p>Frederiksværksvej 11, 3230 Græsted</p>
@@ -166,5 +175,67 @@
   .footer-copyright {
     text-align: center;
     font-size: var(--font-size-s);
+  }
+
+  .footer-cta-mobile {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .top-content {
+      padding: 0.5rem 0;
+    }
+
+    .bottom-content {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      gap: 0.5rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-cta {
+      display: none;
+    }
+
+    .footer-cta-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-contact p {
+      margin: 0;
+    }
+
+    .footer-social-icons {
+      margin-top: 0.2rem;
+    }
+    .footer-kontrolrapport img {
+      margin-top: 0.2rem;
+    }
+
+    .footer-decoration-spacer {
+      display: none;
+    }
+
+    .btn-reverse {
+      background-color: var(--color-footer-top);
+      max-width: 40%;
+    }
+
+    .bold {
+      font-size: var(--font-size-l) !important;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+    }
   }
 </style>
