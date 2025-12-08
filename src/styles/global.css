@@ -174,10 +174,15 @@ header,
 }
 
 @media (max-width: 900px) {
+  body {
+    line-height: 1.6;
+  }
+
   .content {
     grid-column: 1 / 12;
     padding: 1rem;
   }
+
   h1 {
     font-size: clamp(2rem, 1.6rem + 2vw, 2.75rem);
   }
