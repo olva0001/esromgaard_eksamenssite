@@ -44,8 +44,6 @@ body {
   font-weight: 400;
   color: #222;
   margin: 0;
-
-  /* smooth loading effect */
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
@@ -173,4 +171,22 @@ header,
 .leaflet-marker-icon,
 .leaflet-marker-shadow {
   z-index: 1 !important;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-column: 1 / 12;
+    padding: 1rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 1.6rem + 2vw, 2.75rem);
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
+  }
+
+  h3 {
+    font-size: clamp(1.1rem, 0.9rem + 1vw, 1.5rem);
+  }
 }
