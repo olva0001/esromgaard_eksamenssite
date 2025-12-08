@@ -234,7 +234,7 @@ const categories = await res.json();
   }
 </style>
 
-<script>
+<script type="module">
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-accordion]");
     if (!btn) return;
