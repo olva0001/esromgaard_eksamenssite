@@ -18,151 +18,220 @@ import FrugtDesktop from "../components/FrugtDesktop.astro";
 
   <!-- INTRO SECTION -->
   <div class="content">
-    <section class="intro-section">
-      <div class="intro-grid">
-        <!-- LEFT SIDE: TEXT CONTENT -->
-        <div class="intro-text">
-          <h2>Friskere bliver det ikke</h2>
+    <div class="mobile-title">
+      <h2>Håndplukket og frisk fra marken</h2>
+      <h3>- Jordbær, Asparges, Kartofler, Ærter og Rabarber</h3>
+      <section class="intro-section">
+        <div class="intro-grid">
+          <!-- LEFT SIDE: TEXT CONTENT -->
+          <div class="intro-text">
+            <h2 class="black-title">Friskere bliver det ikke</h2>
 
-          <p>
-            Vi sætter en stor ære i at levere friske jordbær til vores kunder,
-            og de jordbær, du køber i gårdsalget, er altid plukket samme morgen.
-            Også asparges, ærter, kartofler og rabarber kommer direkte fra
-            marken og ud til salgsstederne friske og fulde af smag.
-          </p>
+            <p>
+              Vi sætter en stor ære i at levere friske jordbær til vores kunder,
+              og de jordbær, du køber i gårdsalget, er altid plukket samme
+              morgen. Også asparges, ærter, kartofler og rabarber kommer direkte
+              fra marken og ud til salgsstederne friske og fulde af smag.
+            </p>
 
-          <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
+            <a href="/gaardsalg" class="green-button">Besøg gårdsalget</a>
+          </div>
+
+          <!-- RIGHT SIDE: IMAGE -->
+          <div class="intro-image">
+            <img
+              src="/images/kartofel_frugt.webp"
+              alt="Kartofel fra Esromgaard"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- 3 CARDS SECTION -->
+      <section class="three-images-section">
+        <div>
+          <div class="three-images-image">
+            <img src="/images/asparges_frugt.webp" alt="billede af asparges" />
+          </div>
         </div>
 
-        <!-- RIGHT SIDE: IMAGE -->
-        <div class="intro-image">
-          <img
-            src="/images/kartofel_frugt.webp"
-            alt="Kartofel fra Esromgaard"
-          />
+        <div>
+          <div class="three-images-image">
+            <img src="/images/aerter_3.webp" alt="billede af ærter" />
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- 3 CARDS SECTION -->
-    <section class="three-images-section">
-      <div>
-        <div class="three-images-image">
-          <img src="/images/asparges_frugt.webp" alt="billede af asparges" />
-        </div>
-      </div>
 
-      <div>
-        <div class="three-images-image">
-          <img src="/images/aerter_3.webp" alt="billede af ærter" />
+        <div>
+          <div class="three-images-image">
+            <img src="/images/rabarber_3.webp" alt="billede af rabarber" />
+          </div>
         </div>
-      </div>
-
-      <div>
-        <div class="three-images-image">
-          <img src="/images/rabarber_3.webp" alt="billede af rabarber" />
-        </div>
-      </div>
-    </section>
-    <!-- FRUGT CATEGORIES SECTION -->
-    <FrugtDesktop />
+      </section>
+      <!-- FRUGT CATEGORIES SECTION -->
+      <FrugtDesktop />
+    </div>
   </div>
+</Layout>
 
-  <style>
+<style>
+  .hero {
+    position: relative;
+  }
+  .hero-image {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    scale: 1.05;
+    object-fit: cover;
+    display: block;
+  }
+
+  .title {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+
+  .frugt_title_font {
+    color: white;
+  }
+
+  /* INTRO SECTION */
+  .intro-section {
+    margin-bottom: 4rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15%;
+    align-items: start;
+  }
+
+  .intro-text {
+    min-width: 0;
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-s);
+  }
+
+  .intro-text a {
+    margin-top: 5rem;
+    display: inline-block;
+  }
+
+  .intro-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .intro-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* 3 IMAGES SECTION */
+  .three-images-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 8rem;
+  }
+
+  .three-images-image {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .three-images-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
     .hero {
-      position: relative;
-    }
-    .hero-image {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-      z-index: 0;
-      margin-bottom: 5rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      display: none;
     }
 
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      scale: 1.05;
-      object-fit: cover;
-      display: block;
+    .mobile-title {
+      display: flex;
+      flex-direction: column;
+      margin-top: 7rem;
+      margin-bottom: 1.5rem;
+      gap: 0.35rem;
     }
 
-    .title {
-      position: absolute;
-      top: 70%;
-      left: 5%;
-      text-align: left;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      z-index: 1;
+    .mobile-title h2 {
+      color: var(--color-heading-h1) !important;
     }
 
-    .frugt_title_font {
-      color: white;
+    .mobile-title h3 {
+      font-size: var(--font-size-xl);
+      margin-bottom: 2rem;
     }
 
-    /* INTRO SECTION */
-    .intro-section {
-      margin-bottom: 4rem;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15%;
-      align-items: start;
-    }
-
-    .intro-text {
-      min-width: 0;
-      line-height: var(--line-height-body);
-      font-size: var(--font-size-s);
-    }
-
-    .intro-text a {
-      margin-top: 5rem;
-      display: inline-block;
+    .three-images-section {
+      display: none;
     }
 
     .intro-image {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1rem;
-      align-self: stretch;
-      min-width: 0;
+      display: none;
     }
 
-    .intro-image img {
-      position: absolute;
-      inset: 0;
+    .intro-section {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .intro-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
     }
 
-    /* 3 IMAGES SECTION */
-    .three-images-section {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-bottom: 8rem;
+    .intro-text {
+      font-size: var(--font-size-m);
+      line-height: 1.6;
     }
 
-    .three-images-image {
-      width: 100%;
-      aspect-ratio: 5 / 3;
-      overflow: hidden;
-      border-radius: 20px;
+    .intro-text .black-title {
+      color: black !important;
     }
 
-    .three-images-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .intro-text h2 {
+      font-size: var(--font-size-xl);
+      margin-bottom: 0.75rem;
     }
-  </style>
-</Layout>
+
+    .intro-text p {
+      margin-bottom: 1.25rem;
+    }
+
+    .intro-text a {
+      margin-top: 1.25rem;
+    }
+  }
+</style>
