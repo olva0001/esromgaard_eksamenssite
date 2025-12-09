@@ -191,6 +191,34 @@ header,
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
 
+button.cm__btn[data-role="all"] {
+  background-color: var(--color-site-green) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  border: none !important;
+}
+
+button.cm__btn[data-role="all"]:hover {
+  background-color: var(--color-button-hover) !important;
+}
+
+button.cm__btn[data-role="necessary"] {
+  background-color: var(--color-site-green) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  border: none !important;
+}
+
+button.cm__btn[data-role="necessary"]:hover {
+  background-color: var(--color-button-hover) !important;
+}
+
+button.cm__btn[data-role="preferences"] {
+  background-color: #fff !important;
+  color: #3b7a57 !important;
+  border-radius: 6px !important;
+}
+
 @media (max-width: 900px) {
   :root {
     --font-size-s: clamp(0.95rem, 0.9rem + 0.4vw, 1.15rem);

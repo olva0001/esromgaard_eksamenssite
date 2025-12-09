@@ -20,6 +20,12 @@ import "../styles/global.css";
       rel="stylesheet"
     />
 
+    <!-- CookieConsent CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css"
+    />
+
     <!-- Leaflet -->
     <link
       rel="stylesheet"
@@ -28,12 +34,6 @@ import "../styles/global.css";
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="/styles/global.css" />
-
-    <!-- CookieConsent CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css"
-    />
   </head>
 
   <body>
@@ -58,7 +58,7 @@ import "../styles/global.css";
     <!-- Reload page if cookies are accepted, to load instagram embed -->
     <script>
       document.addEventListener("click", (e) => {
-        if (e.target.textContent.includes("Accept all")) {
+        if (e.target.textContent.includes("Accepter alle")) {
           location.reload();
         }
       });

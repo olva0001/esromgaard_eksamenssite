@@ -91,14 +91,18 @@
   }
 
   .instagram-blocked button {
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    background: var(--color-site-green);
+    background-color: var(--color-site-green);
     color: white;
     border: none;
-    cursor: pointer;
+    border-radius: 5px;
+    padding: 1rem 2rem;
     font-size: var(--font-size-s);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .instagram-blocked button:hover {
+    background-color: var(--color-button-hover);
   }
 
   @media (max-width: 900px) {
