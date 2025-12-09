@@ -7,7 +7,9 @@ import Layout from "../layouts/Layout.astro";
     <div class="intro-title">
       <div>
         <h1>Er du vores nye jordbærsælger?</h1>
-        <h2>- Vi søger sælgere til sommersæsonen juni og juli 2026</h2>
+        <h2 class="hidden-mobile">
+          - Vi søger sælgere til sommersæsonen juni og juli 2026
+        </h2>
       </div>
       <div>
         <img
@@ -166,6 +168,10 @@ import Layout from "../layouts/Layout.astro";
     }
 
     hr {
+      margin-bottom: 0;
+    }
+
+    .hidden-mobile {
       display: none;
     }
 

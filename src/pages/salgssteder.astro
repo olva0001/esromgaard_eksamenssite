@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="intro-title">
       <div>
         <h1>Frisk frugt og grønt hele sommeren</h1>
-        <h2>- Sæsonens bedste råvarer, hver dag</h2>
+        <h2 class="hidden-mobile">- Sæsonens bedste råvarer, hver dag</h2>
       </div>
       <div>
         <img
@@ -290,6 +290,10 @@ import Layout from "../layouts/Layout.astro";
     .intro-title {
       margin-top: 7rem;
       margin-bottom: 4rem;
+    }
+
+    .hidden-mobile {
+      display: none;
     }
 
     .strawberry-fit-content {
