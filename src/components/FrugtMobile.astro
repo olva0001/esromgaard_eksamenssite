@@ -116,7 +116,8 @@ const categories = await res.json();
 
   .category-header-left h3 {
     margin: 0;
-    font-size: var(--font-size-xxl);
+    font-size: var(--font-size-xl);
+    font-family: "Lato", sans-serif;
     line-height: 1.1;
     padding-top: 0.35rem;
   }
@@ -140,6 +141,7 @@ const categories = await res.json();
     display: inline-block;
     transition: transform 200ms ease;
     transform: rotate(0deg);
+    margin-left: 1rem;
   }
 
   .category-item.open .category-box-button .arrow {
@@ -209,6 +211,7 @@ const categories = await res.json();
     display: inline-block;
     transition: transform 200ms ease;
     transform: rotate(0deg);
+    padding: 0.75rem;
   }
 
   .variant-item.open .toggle-variant .arrow {
