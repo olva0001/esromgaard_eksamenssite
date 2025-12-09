@@ -55,6 +55,15 @@ import "../styles/global.css";
     <!-- Load CookieConsent config -->
     <script src="/cookieconsent-config.js" is:inline></script>
 
+    <!-- Reload page if cookies are accepted, to load instagram embed -->
+    <script>
+      document.addEventListener("click", (e) => {
+        if (e.target.textContent.includes("Accept all")) {
+          location.reload();
+        }
+      });
+    </script>
+
     <!-- Lightbox script -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
