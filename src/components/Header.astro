@@ -24,6 +24,11 @@
 
   <div class="mobile-menu">
     <div class="mobile-menu-header">
+      <img
+        class="header-icon"
+        src="/images/strawberry_icon.svg"
+        alt="strawberry icon"
+      />
       <button class="close" aria-label="Close menu">✕</button>
     </div>
 
@@ -121,6 +126,10 @@
     height: 100vh;
   }
 
+  .header-icon {
+    display: none;
+  }
+
   @media (max-width: 900px) {
     .menu {
       display: none !important;
@@ -175,10 +184,16 @@
 
     .mobile-menu-header {
       display: flex;
-      justify-content: flex-end;
-      padding: 1rem;
+      justify-content: space-between;
+      padding: 0.4rem 1rem;
       border-bottom: 1px solid #d9d9d9;
       flex-shrink: 0;
+    }
+
+    .header-icon {
+      display: inline-block;
+      width: 15%;
+      height: auto;
     }
 
     .close {
