@@ -9,8 +9,7 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" />
     <title>Esromgaard</title>
 
     <!-- Fonts -->
@@ -21,7 +20,7 @@ import "../styles/global.css";
       rel="stylesheet"
     />
 
-    <!-- Leaflet CSS -->
+    <!-- Leaflet -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -29,24 +28,53 @@ import "../styles/global.css";
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- CookieConsent CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css"
+    />
   </head>
+
   <body>
     <Header />
 
-    <!-- HERO stays outside the grid -->
     <slot name="hero" />
 
-    <!-- The rest of the site uses the 11-column grid -->
     <div class="page">
       <div class="grid-overlay"></div>
       <slot />
       <Footer />
     </div>
 
-    <!-- LIGHTBOX -->
+    <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
       <img id="lightbox-img" src="" alt="" />
     </div>
+
+    <!-- Load CookieConsent config -->
+    <script src="/cookieconsent-config.js" is:inline></script>
+
+    <!-- Lightbox script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("loaded");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (e.target.matches("img.lightbox-target")) {
+          const src = e.target.getAttribute("src");
+          document.getElementById("lightbox-img").src = src;
+          document.getElementById("lightbox").style.display = "flex";
+        }
+      });
+
+      document
+        .getElementById("lightbox")
+        .addEventListener("click", function () {
+          this.style.display = "none";
+        });
+    </script>
   </body>
 </html>
 
@@ -58,24 +86,3 @@ import "../styles/global.css";
     height: 100%;
   }
 </style>
-
-<script type="module">
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loaded");
-  });
-
-  document.addEventListener("click", function (e) {
-    if (e.target.matches("img.lightbox-target")) {
-      const src = e.target.getAttribute("src");
-      const lightbox = document.getElementById("lightbox");
-      const img = document.getElementById("lightbox-img");
-
-      img.src = src;
-      lightbox.style.display = "flex";
-    }
-  });
-
-  document.getElementById("lightbox").addEventListener("click", function () {
-    this.style.display = "none";
-  });
-</script>
