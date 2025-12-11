@@ -62,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </section>
-    <section class="content">
+    <section>
       <section class="intro-section">
         <h2 class="title">Et Smagfuldt Udvalg af Jordbær</h2>
         <hr />
@@ -202,5 +202,55 @@ import Layout from "../layouts/Layout.astro";
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .intro-section {
+      margin-top: 25%;
+      margin-bottom: 4rem;
+    }
+
+    .intro-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    hr {
+      margin-bottom: 0;
+    }
+
+    .return-button {
+      order: -3;
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .intro-text {
+      order: -1;
+      font-size: var(--font-size-s);
+    }
+
+    .intro-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .intro-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-list {
+      display: none;
+    }
   }
 </style>

@@ -33,6 +33,8 @@
   --color-underline: #bac1a8;
   --color-strawberry: #c54648;
   --color-strawberry-hover: #f28a8b;
+  --color-halloween: #ed9d1b;
+  --color-halloween-hover: #ffd591;
 
   /* Optional line heights */
   --line-height-body: 2;
@@ -132,6 +134,21 @@ a {
 
 .red-button:hover {
   background-color: var(--color-strawberry-hover);
+}
+
+.orange-button {
+  background-color: var(--color-halloween);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  font-size: var(--font-size-s);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.orange-button:hover {
+  background-color: var(--color-halloween-hover);
 }
 
 .return-button {
