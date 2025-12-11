@@ -31,6 +31,8 @@
   --color-site-green: #6da060;
   --color-button-hover: #b7e4ab;
   --color-underline: #bac1a8;
+  --color-strawberry: #c54648;
+  --color-strawberry-hover: #f28a8b;
 
   /* Optional line heights */
   --line-height-body: 2;
@@ -115,6 +117,21 @@ a {
 
 .white-button:hover {
   background-color: var(--color-button-hover);
+}
+
+.red-button {
+  background-color: var(--color-strawberry);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  font-size: var(--font-size-s);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.red-button:hover {
+  background-color: var(--color-strawberry-hover);
 }
 
 .return-button {

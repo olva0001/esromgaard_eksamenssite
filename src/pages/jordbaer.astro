@@ -1,0 +1,206 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="content">
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <div>
+        <a class="return-button" href="/gaardsalg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="2 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M14 6 L8 12 L14 18"></path>
+            <line x1="8" y1="12" x2="20" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+      <h2 class="title">
+        Smagen af Sommer - Hent Dine Jordbær Direkte fra Marken
+      </h2>
+      <hr />
+      <div class="intro-grid">
+        <!-- LEFT SIDE: TEXT CONTENT -->
+        <div class="intro-text">
+          <p>
+            På Esromgaard glæder vi os hver sommer til at byde dig velkommen i
+            vores pluk-selv jordbærmarker. Her kan du gå på opdagelse blandt
+            rækkerne af solmodne, søde bær og fylde kurven med den friskeste
+            smag af sommer. Vi dyrker vores jordbær med omtanke og fokus på
+            kvalitet, så du får den bedste oplevelse - både i marken og hjemme
+            ved bordet. Besøg os for en hyggelig udflugt, hvor nærvær og natur
+            går hånd i hånd.
+          </p>
+          <p>
+            Pluk-selv sæsonen for jordbær afhænger af vejr og modning, og derfor
+            varierer åbningstidspunktet fra år til år. Typisk starter sæsonen i
+            juni, men den præcise dato melder vi altid ud, så snart markerne er
+            klar. Hold øje her på siden eller følg os på Instagram og Facebook
+            for de nyeste opdateringer, så du ikke går glip af årets første,
+            friskplukkede bær.
+          </p>
+          <p>Du finder jordbærmarkerne på samme adresse som vores gårdsalg:</p>
+          <p><strong>Frederiksværksvej 11, 3230 Græsted</strong></p>
+          <a href="/findvej" class="red-button">Find vej til Gårdsalget</a>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="intro-image">
+          <img
+            src="/images/jordbaer_1.webp"
+            alt="billede af hjemmelavede varer"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <section class="intro-section">
+        <h2 class="title">Et Smagfuldt Udvalg af Jordbær</h2>
+        <hr />
+
+        <div class="intro-grid">
+          <!-- LEFT SIDE: TEXT -->
+          <div class="intro-text">
+            <p>
+              På Esromgaard dyrker vi hele 13 forskellige jordbærsorter, hver
+              med deres egen karakter, sødme og aroma. Det brede udvalg giver
+              dig mulighed for at smage dig frem til din favorit - uanset om du
+              foretrækker de helt søde bær eller dem med lidt mere friskhed. Vi
+              udvælger vores sorter med fokus på kvalitet og den bedste
+              smagsoplevelse, så du altid får jordbær af højeste standard.
+            </p>
+
+            <p><strong>Jordbærsorter i markerne (2025)</strong></p>
+
+            <ul>
+              <li>Daroyal</li>
+              <li>Honeoye</li>
+              <li>Dahli</li>
+              <li>Allegro</li>
+              <li>Verdi</li>
+              <li>Malling Centenary</li>
+              <li>Polka</li>
+              <li>Sonata</li>
+              <li>Sonsation</li>
+              <li>Renaissance</li>
+              <li>Korona</li>
+              <li>Faith</li>
+              <li>Malwina</li>
+            </ul>
+
+            <a href="/jordbaersorter" class="red-button">Læs om sorterne her</a>
+          </div>
+
+          <!-- RIGHT SIDE: IMAGES -->
+          <div class="image-list">
+            <div class="image-card">
+              <img src="/images/jordbaer_2.webp" alt="jordbær i bakke" />
+            </div>
+
+            <div class="image-card">
+              <img src="/images/jordbaer_3.webp" alt="nærbillede af jordbær" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+</Layout>
+
+<style>
+  .intro-section {
+    margin-top: 10%;
+    margin-bottom: 4rem;
+  }
+  h2 {
+    color: var(--color-heading-h1) !important;
+  }
+  .title {
+    margin-top: 1%;
+    color: var(--color-strawberry) !important;
+  }
+
+  hr {
+    margin-bottom: 4rem;
+  }
+
+  .intro-text p:first-child {
+    margin-top: 0;
+  }
+
+  .intro-text p:nth-last-child(3) {
+    margin-bottom: 0.1rem;
+  }
+
+  .intro-text p:nth-last-child(2) {
+    margin-top: 0.1rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: start;
+  }
+
+  .intro-text {
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-s);
+  }
+
+  .intro-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .intro-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+  }
+
+  .red-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+  }
+
+  .image-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  .image-card {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .image-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
