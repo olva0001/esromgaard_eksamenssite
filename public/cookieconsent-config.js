@@ -1,24 +1,28 @@
-// Load CookieConsent UMD library
+// public/cookieconsent-config.js
+// Load CookieConsent synchronously as early as possible
+
 const ccScript = document.createElement("script");
 ccScript.src =
   "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js";
+ccScript.async = false;
 
 ccScript.onload = () => {
-  CookieConsent.run({
+  window.CookieConsent.run({
     guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      flipButtons: false
+      consentModal: {
+        layout: "box",
+        position: "bottom right",
+        flipButtons: false
+      },
+      preferencesModal: {
+        layout: "box"
+      }
     },
-    preferencesModal: {
-      layout: "box"
-    }
-  },
+
     categories: {
       necessary: { enabled: true, readOnly: true },
       analytics: {},
-      marketing: {},
+      marketing: {}
     },
 
     language: {
@@ -28,10 +32,10 @@ ccScript.onload = () => {
           consentModal: {
             title: "Vi bruger cookies",
             description:
-              "Vi anvender cookies for at sikre den grundlæggende funktionalitet af hjemmesiden samt til at indsamle analyse- og marketingdata. Du kan vælge kun at acceptere nødvendige cookies eller tilpasse dine præferencer.",
+              "Vi anvender cookies for at sikre den grundlæggende funktionalitet samt til analyse og marketing.",
             acceptAllBtn: "Accepter alle",
             acceptNecessaryBtn: "Afvis nødvendige",
-            showPreferencesBtn: "Administrer præferencer",
+            showPreferencesBtn: "Administrer præferencer"
           },
           preferencesModal: {
             title: "Administrer cookie-præferencer",
@@ -43,26 +47,26 @@ ccScript.onload = () => {
               {
                 title: "Nødvendige cookies",
                 description:
-                  "Disse cookies er nødvendige for, at hjemmesiden fungerer korrekt og kan ikke fravælges.",
-                linkedCategory: "necessary",
+                  "Disse cookies er nødvendige for at hjemmesiden fungerer korrekt.",
+                linkedCategory: "necessary"
               },
               {
                 title: "Analysecookies",
                 description:
-                  "Disse cookies hjælper os med at forstå, hvordan besøgende bruger hjemmesiden, så vi kan forbedre brugeroplevelsen.",
-                linkedCategory: "analytics",
+                  "Disse cookies hjælper os med at forbedre brugeroplevelsen.",
+                linkedCategory: "analytics"
               },
               {
                 title: "Marketingcookies",
                 description:
-                  "Disse cookies bruges til at vise relevant indhold, f.eks. Instagram-embeds og andre tredjeparts tjenester.",
-                linkedCategory: "marketing",
-              },
-            ],
-          },
-        },
-      },
-    },
+                  "Disse cookies muliggør visning af Instagram-indhold og andre tredjepartswidgets.",
+                linkedCategory: "marketing"
+              }
+            ]
+          }
+        }
+      }
+    }
   });
 };
 

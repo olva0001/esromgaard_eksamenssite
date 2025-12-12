@@ -7,7 +7,10 @@
           Vil du holde dig opdateret på, hvad der er i sæson, og hvornår der er
           friske råvarer fra vores marker? På Facebook og Instagram deler vi
           løbende nyt om årets høst, aktuelle frugt- og grøntsagsudvalg samt
-          praktisk information om vores populære pluk-selv jordbær.
+          praktisk information om vores populære pluk-selv jordbær. Følg os på
+          sociale medier, så får du besked, når pluk-selv jordbær åbner igen til
+          næste år - og du går aldrig glip af, hvad der spirer og gror på
+          Esromgaard.
         </p>
         <p>Find Esromgaard på både Facebook og Instagram</p>
 
@@ -15,21 +18,16 @@
           <a
             href="https://www.facebook.com/esromgaard/?locale=da_DK"
             target="_blank"
-            rel="noopener noreferrer"
           >
             <img src="/images/facebook_icon.svg" alt="facebook icon" />
           </a>
-          <a
-            href="https://www.instagram.com/esromgaard/?hl=da"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.instagram.com/esromgaard/?hl=da" target="_blank">
             <img src="/images/instagram_icon.svg" alt="instagram icon" />
           </a>
         </div>
       </div>
 
-      <!-- INSTAGRAM BLOCKED BY DEFAULT -->
+      <!-- DEFAULT BLOCKED STATE -->
       <div class="instagram-embed">
         <div
           class="instagram-blocked"
@@ -51,105 +49,56 @@
   .instagram-section {
     background-color: #f7f7f7;
     padding: 4rem 0;
-    width: 100%;
-    box-sizing: border-box;
   }
-
   .instagram-inner {
-    margin: 0 auto;
     max-width: 860px;
-    padding: 0 1.5rem;
+    margin: auto;
     display: flex;
-    flex-direction: row;
     gap: 3rem;
-    align-items: flex-start;
     font-size: var(--font-size-s);
   }
-
   .instagram-info {
     width: 55%;
   }
-
   .instagram-embed {
     width: 45%;
-    overflow: hidden;
   }
-
   .instagram-icons img {
     width: 50px;
     margin-right: 1rem;
-    vertical-align: middle;
-    display: inline-block;
   }
-
   .instagram-blocked {
     padding: 1.5rem;
     border: 2px dashed #ccc;
     border-radius: 12px;
-    text-align: center;
     background: white;
+    text-align: center;
   }
-
   .instagram-blocked button {
     background-color: var(--color-site-green);
     color: white;
     border: none;
     border-radius: 5px;
     padding: 1rem 2rem;
-    font-size: var(--font-size-s);
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .instagram-blocked button:hover {
-    background-color: var(--color-button-hover);
-  }
-
-  @media (max-width: 900px) {
-    .instagram-inner {
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 0 1rem;
-    }
-
-    .instagram-info {
-      width: 100%;
-    }
-
-    .instagram-embed {
-      width: 100%;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .instagram-icons img {
-      width: 34px;
-    }
   }
 </style>
 
 <script>
-  // --- MAIN LOADER FUNCTION ----------------------------------------------------
   function loadInstagramEmbed() {
     document.querySelectorAll("[data-instgrm-permalink]").forEach((el) => {
       const permalink = el.dataset.instgrmPermalink;
-
       const block = document.createElement("blockquote");
       block.className = "instagram-media";
       block.dataset.instgrmPermalink = permalink;
-
       el.replaceWith(block);
 
-      // Load embed.js once
       if (!document.getElementById("insta-script")) {
         const script = document.createElement("script");
         script.id = "insta-script";
         script.src = "https://www.instagram.com/embed.js";
         script.async = true;
-        script.onload = () => {
-          window.instgrm?.Embeds?.process();
-        };
+        script.onload = () => window.instgrm?.Embeds?.process();
         document.body.appendChild(script);
       } else {
         window.instgrm?.Embeds?.process();
@@ -157,32 +106,32 @@
     });
   }
 
-  // --- BUTTON: Allow Instagram --------------------------------------------------
+  // Load if marketing cookies were already accepted
+  function checkAndLoad() {
+    if (window.CookieConsent?.acceptedCategory("marketing")) {
+      loadInstagramEmbed();
+    }
+  }
+
+  // User clicks the inline “Tillad og indlæs Instagram”
   document.addEventListener("click", (e) => {
     if (e.target.closest(".enable-instagram")) {
-      CookieConsent.acceptCategory("marketing");
-      loadInstagramEmbed();
+      window.CookieConsent.acceptCategory("marketing");
+      // wait a tick for CC to update preferences
+      setTimeout(checkAndLoad, 30);
     }
   });
 
-  // --- AUTO-LOAD: If user already accepted cookies ------------------------------
+  //   Three events cover:
+  // - Accept All
+  // - Save preferences
+  // - Restored preferences on page load
+  window.addEventListener("cc:acceptAll", () => setTimeout(checkAndLoad, 30));
+  window.addEventListener("cc:onConsent", () => setTimeout(checkAndLoad, 30));
+  window.addEventListener("cc:onStatusChange", checkAndLoad);
+
+  // Fallback: check once DOM is ready
   document.addEventListener("DOMContentLoaded", () => {
-    if (window.CookieConsent?.acceptedCategory("marketing")) {
-      loadInstagramEmbed();
-    }
-  });
-
-  // --- AUTO-LOAD ON: Accept All -------------------------------------------------
-  window.addEventListener("cc:accept", () => {
-    if (window.CookieConsent?.acceptedCategory("marketing")) {
-      loadInstagramEmbed();
-    }
-  });
-
-  // --- AUTO-LOAD ON: Save Preferences ------------------------------------------
-  window.addEventListener("cc:change", () => {
-    if (window.CookieConsent?.acceptedCategory("marketing")) {
-      loadInstagramEmbed();
-    }
+    setTimeout(checkAndLoad, 50);
   });
 </script>
