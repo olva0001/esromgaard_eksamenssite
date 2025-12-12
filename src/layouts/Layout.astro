@@ -34,6 +34,14 @@ import "../styles/global.css";
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- Lighthouse -->
+    <link
+      rel="preload"
+      as="image"
+      href="/_astro/esromgaard_hero.webp"
+      fetchpriority="high"
+    />
   </head>
 
   <body>
@@ -56,7 +64,7 @@ import "../styles/global.css";
     <script src="/cookieconsent-config.js" is:inline></script>
 
     <!-- Reload page if cookies are accepted, to load instagram embed -->
-    <script>
+    <script type="module">
       document.addEventListener("click", (e) => {
         if (e.target.textContent.includes("Accepter alle")) {
           location.reload();
@@ -65,7 +73,7 @@ import "../styles/global.css";
     </script>
 
     <!-- Lightbox script -->
-    <script>
+    <script type="module">
       document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("loaded");
       });
