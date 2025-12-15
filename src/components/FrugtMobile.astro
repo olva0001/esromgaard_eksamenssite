@@ -18,13 +18,13 @@ const categories = await res.json();
   </h2>
 
   {
-    categories.map((cat) => (
+    categories.map((frugt) => (
       <div class="category-item">
         <div class="category-box">
           <div class="category-header">
             <div class="category-header-left">
-              <img src={cat.image} alt={cat.name} />
-              <h3>{cat.name}</h3>
+              <img src={frugt.image} alt={frugt.name} />
+              <h3>{frugt.name}</h3>
             </div>
 
             <button
@@ -39,15 +39,19 @@ const categories = await res.json();
 
         <div class="category-body">
           <div class="category-body-inner">
-            <p class="category-description">{cat.description}</p>
+            <p class="category-description">{frugt.description}</p>
+            <p class="category-season">
+              <strong>Sæson: </strong>
+              {frugt.season}
+            </p>
 
             <div class="variants">
-              {cat.variants.map((v) => (
+              {frugt.variants.map((variant) => (
                 <div class="variant-item">
                   <div class="variant-header">
                     <div class="variant-left">
-                      <img src={v.image} alt={v.name} />
-                      <h4>{v.name}</h4>
+                      <img src={variant.image} alt={variant.name} />
+                      <h4>{variant.name}</h4>
                     </div>
 
                     <button
@@ -60,7 +64,7 @@ const categories = await res.json();
                   </div>
 
                   <div class="variant-panel">
-                    <p>{v.description}</p>
+                    <p>{variant.description}</p>
                   </div>
                 </div>
               ))}
@@ -149,6 +153,11 @@ const categories = await res.json();
     padding: 0 0.5rem;
     margin-left: 0.5rem;
     border-left: 2px solid var(--color-site-green);
+  }
+
+  .category-season {
+    margin-left: 1rem;
+    font-size: var(--font-size-s);
   }
 
   .category-item.open .category-box-button .arrow {
