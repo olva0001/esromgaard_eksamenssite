@@ -10,6 +10,7 @@
   grid-column: 2 / 11;
 }
 
+/* content spanning the entire viewwidth */
 .full-bleed {
   grid-column: 1 / -1;
 }
