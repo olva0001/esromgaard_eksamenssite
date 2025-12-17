@@ -4,10 +4,10 @@ import LeafletMap from "../components/LeafletMap.astro";
 ---
 
 <Layout>
-  <section class="content">
-    <section class="intro-section">
-      <div class="intro-grid">
-        <div class="intro-text">
+  <section class="content findvej">
+    <section class="findvej-intro-section">
+      <div class="findvej-intro-grid">
+        <div class="findvej-intro-text">
           <h1>Find vej til Esromgaard</h1>
           <p>
             Esromgaard ligger i det naturskønne Kongernes Nordsjælland, let
@@ -30,22 +30,23 @@ import LeafletMap from "../components/LeafletMap.astro";
           >
         </div>
 
-        <div class="map-container">
+        <div class="findvej-map-container">
           <LeafletMap />
         </div>
       </div>
     </section>
+
     <section>
       <h2>Du er fremme, når du mødes af dette fine skilt - velkommen!</h2>
       <hr />
-      <div class="two-c-grid">
-        <div class="column-one">
+      <div class="findvej-two-c-grid">
+        <div class="findvej-column-one">
           <img
             src="/images/gaard_skilt.webp"
             alt="Billede af skilt ved indkørsel til Esromgaard"
           />
         </div>
-        <div class="column-two">
+        <div class="findvej-column-two">
           <img src="/images/strawberry_icon.svg" alt="" />
         </div>
       </div>
@@ -54,58 +55,58 @@ import LeafletMap from "../components/LeafletMap.astro";
 </Layout>
 
 <style>
-  .intro-section {
+  .findvej-intro-section {
     margin-bottom: 4rem;
     margin-top: 10%;
   }
 
-  .intro-grid {
+  .findvej-intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10%;
     align-items: start;
   }
 
-  .intro-text {
+  .findvej-intro-text {
     min-width: 0;
     line-height: var(--line-height-body);
     font-size: var(--font-size-s);
   }
 
-  .intro-text a {
+  .findvej-intro-text a {
     margin-top: 2rem;
     display: inline-block;
   }
 
-  .map-container {
+  .findvej-map-container {
     align-self: stretch;
     min-width: 0;
     height: 100%;
   }
 
-  .two-c-grid {
+  .findvej-two-c-grid {
     display: flex;
     flex-direction: row;
     margin-bottom: 5%;
     margin-top: 5%;
   }
 
-  .column-one {
+  .findvej-column-one {
     width: 50%;
   }
 
-  .column-one img {
+  .findvej-column-one img {
     width: 80%;
     height: auto;
     border-radius: 20px;
   }
 
-  .column-two {
+  .findvej-column-two {
     width: 50%;
     position: relative;
   }
 
-  .column-two img {
+  .findvej-column-two img {
     position: absolute;
     left: 50%;
     width: 30%;
@@ -113,25 +114,25 @@ import LeafletMap from "../components/LeafletMap.astro";
   }
 
   @media (max-width: 900px) {
-    .intro-grid {
+    .findvej-intro-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
-    .intro-section {
+    .findvej-intro-section {
       margin-top: 7rem;
     }
 
-    .column-one {
+    .findvej-column-one {
       width: 100%;
     }
 
-    .column-one img {
+    .findvej-column-one img {
       width: 100%;
     }
 
-    .column-two {
+    .findvej-column-two {
       display: none;
     }
   }
