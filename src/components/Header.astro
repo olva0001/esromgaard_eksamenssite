@@ -252,41 +252,61 @@
 
 <script type="module">
   (function () {
+    // Grab key elements
     const burger = document.querySelector(".burger");
     const mobileMenu = document.querySelector(".mobile-menu");
     const closeBtn = document.querySelector(".close");
+
+    // Opens the mobile menu
     function openMenu() {
-      mobileMenu.classList.add("open");
-      document.body.classList.add("no-scroll");
+      mobileMenu.classList.add("open"); // Slide menu into view
+      document.body.classList.add("no-scroll"); // Prevent background scrolling
       mobileMenu.setAttribute("aria-hidden", "false");
-      const navFirstLink = mobileMenu.querySelector(".mobile-nav a");
-      if (navFirstLink) navFirstLink.focus();
     }
+
+    // Closes the mobile menu
     function closeMenu() {
-      mobileMenu.classList.remove("open");
+      mobileMenu.classList.remove("open"); // Hide menu
       document.body.classList.remove("no-scroll");
       mobileMenu.setAttribute("aria-hidden", "true");
-      burger.focus();
     }
+
+    // Open menu on burger click
     burger && burger.addEventListener("click", openMenu);
+
+    // Close menu on close button click
     closeBtn && closeBtn.addEventListener("click", closeMenu);
+
+    // Close menu when Escape key is pressed
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && mobileMenu.classList.contains("open"))
+      if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
         closeMenu();
+      }
     });
+
+    // Highlight active navigation link
     document.addEventListener("DOMContentLoaded", () => {
       const currentPath = window.location.pathname;
+
       document.querySelectorAll("nav a").forEach((link) => {
         const href = link.getAttribute("href");
-        if (href === currentPath) link.classList.add("active");
+
+        // Exact match
+        if (href === currentPath) {
+          link.classList.add("active");
+        }
+
+        // Grouped pages that should highlight "Gårdsalget"
         const gaardsalgPages = [
           "/gaardsalg",
           "/halloween",
           "/hjemmelavedevarer",
           "/jordbaer",
         ];
-        if (gaardsalgPages.includes(currentPath) && href === "/gaardsalg")
+
+        if (gaardsalgPages.includes(currentPath) && href === "/gaardsalg") {
           link.classList.add("active");
+        }
       });
     });
   })();
