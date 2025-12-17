@@ -23,7 +23,7 @@ const categories = await res.json();
         <div class="category-box">
           <div class="category-header">
             <div class="category-header-left">
-              <img src={frugt.image} alt={frugt.name} />
+              <img class="lightbox-target" src={frugt.image} alt={frugt.name} />
               <h3>{frugt.name}</h3>
             </div>
 
@@ -50,7 +50,11 @@ const categories = await res.json();
                 <div class="variant-item">
                   <div class="variant-header">
                     <div class="variant-left">
-                      <img src={variant.image} alt={variant.name} />
+                      <img
+                        class="lightbox-target"
+                        src={variant.image}
+                        alt={variant.name}
+                      />
                       <h4>{variant.name}</h4>
                     </div>
 

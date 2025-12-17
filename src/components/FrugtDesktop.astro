@@ -24,7 +24,7 @@ const categories = await res.json();
         <!-- CARD -->
         <div class="category-card">
           <div class="image-wrapper">
-            <img src={frugt.image} alt={frugt.name} />
+            <img class="lightbox-target" src={frugt.image} alt={frugt.name} />
           </div>
 
           <div class="category-content">
@@ -46,7 +46,7 @@ const categories = await res.json();
               {frugt.variants.map((variant) => (
                 <li class="variant-item">
                   <div class="panel-image-wrapper">
-                    <img src={variant.image} alt={variant.name} />
+                    <img class="lightbox-target" src={variant.image} alt={variant.name} />
                   </div>
                   <h3>{variant.name}</h3>
                   <p>{variant.description}</p>
