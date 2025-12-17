@@ -27,6 +27,7 @@ ccScript.onload = () => {
 
     language: {
       default: "da",
+      autoDetect: "browser",
       translations: {
         da: {
           consentModal: {
