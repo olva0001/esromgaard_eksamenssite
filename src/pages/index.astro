@@ -7,21 +7,21 @@ import heroImg from "../assets/esromgaard_hero.webp";
 
 <Layout>
   <div slot="hero" class="hero">
+    <Image
+      src={heroImg}
+      alt="Esromgaard – Smagen af sommer"
+      width={1920}
+      height={1080}
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="hero-img"
+    />
+
+    <!-- HERO TEXT OVERLAY -->
     <div class="title">
       <h1 class="frugt_title_font">Esromgaard</h1>
       <h2 class="frugt_title_font">- Smagen af sommer</h2>
-    </div>
-    <div class="hero-image">
-      <Image
-        src={heroImg}
-        alt="Hero Image"
-        format="webp"
-        width={1920}
-        height={1080}
-        quality={100}
-        style="width: 100%; height: 100%; object-fit: cover;"
-        loading="eager"
-      />
     </div>
   </div>
 
@@ -140,19 +140,20 @@ import heroImg from "../assets/esromgaard_hero.webp";
     color: white;
   }
   .hero {
+    position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   }
 
-  .hero img {
+  .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   }
+
   /* INTRO SECTION */
   .intro-section {
     margin-top: 5%;
