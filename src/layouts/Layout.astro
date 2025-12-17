@@ -17,13 +17,25 @@ import heroImg from "../assets/esromgaard_hero.webp";
     <link rel="icon" href="/favicon.svg" />
     <title>Esromgaard</title>
 
-    <!-- Fonts -->
+    <!-- Preconnect to speed up DNS + TLS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Load fonts WITHOUT blocking render -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+
+    <!-- Fallback for users with JS disabled -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
+      />
+    </noscript>
 
     <!-- CookieConsent CSS -->
     <link
