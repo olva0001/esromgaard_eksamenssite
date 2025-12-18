@@ -5,24 +5,27 @@ import heroImg from "../assets/esromgaard_hero.webp";
 ---
 
 <Layout>
+  <!-- HERO -->
   <div slot="hero" class="hero">
+    <Image
+      src={heroImg}
+      alt="Esromgaard – 900 års historie"
+      width={1920}
+      height={1080}
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="hero-img"
+    />
+
+    <!-- HERO TEXT OVERLAY -->
     <div class="title">
       <h1 class="frugt_title_font">Esromgaard</h1>
       <h2 class="frugt_title_font">- 900 års historie</h2>
     </div>
-    <div class="hero-image">
-      <Image
-        src={heroImg}
-        alt="Hero Image"
-        format="webp"
-        width={1920}
-        height={1080}
-        quality={100}
-        style="width: 100%; height: 100%; object-fit: cover;"
-        loading="eager"
-      />
-    </div>
   </div>
+
+  <!-- CONTENT -->
   <section class="content">
     <div class="intro-title">
       <div>
@@ -31,10 +34,9 @@ import heroImg from "../assets/esromgaard_hero.webp";
     </div>
     <hr />
 
-    <!-- INTRO SECTION -->
+    <!-- INTRO SECTION 1 -->
     <section class="intro-section">
       <div class="intro-grid">
-        <!-- LEFT SIDE: TEXT CONTENT -->
         <div class="intro-text">
           <h3>Esromgaard gennem 900 år</h3>
           <p>
@@ -52,19 +54,19 @@ import heroImg from "../assets/esromgaard_hero.webp";
           </p>
         </div>
 
-        <!-- RIGHT SIDE: IMAGE -->
         <div class="intro-image first_image">
           <img
             class="lightbox-target"
             src="/images/hus_3.webp"
-            alt="Jordbær fra Esromgaard"
+            alt="Gården Esromgaard"
           />
         </div>
       </div>
     </section>
+
+    <!-- INTRO SECTION 2 -->
     <section class="intro-section">
       <div class="intro-grid">
-        <!-- LEFT SIDE: IMAGE -->
         <div class="intro-image">
           <img
             class="lightbox-target"
@@ -72,7 +74,7 @@ import heroImg from "../assets/esromgaard_hero.webp";
             alt="Gårdens ejere"
           />
         </div>
-        <!-- RIGHT SIDE: TEXT CONTENT -->
+
         <div class="intro-text">
           <h3>Tredje generation på Esromgaard</h3>
           <p>
@@ -93,13 +95,29 @@ import heroImg from "../assets/esromgaard_hero.webp";
     </section>
   </section>
 
-  <!-- full width banner -->
+  <!-- FULL WIDTH BANNER -->
   <section class="full-bleed">
     <img class="banner" src="/images/banner_2.webp" alt="billede af jordbær" />
   </section>
 </Layout>
 
 <style>
+  /* HERO */
+  .hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   .title {
     position: absolute;
     top: 70%;
@@ -107,26 +125,25 @@ import heroImg from "../assets/esromgaard_hero.webp";
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     z-index: 1;
+
+    opacity: 0;
+    transform: translateX(-24px);
+    animation: title-slide-in 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes title-slide-in {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   .frugt_title_font {
     color: white;
   }
-  .hero {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  }
 
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
+  /* INTRO TITLE */
   .intro-title {
     display: flex;
     justify-content: space-between;
@@ -146,18 +163,13 @@ import heroImg from "../assets/esromgaard_hero.webp";
     color: var(--color-heading-h1) !important;
   }
 
-  .intro-title > div:last-child {
-    display: flex;
-    align-items: stretch;
-  }
-
   hr {
     color: var(--color-underline);
     margin-bottom: 5rem;
     margin-top: 2rem;
   }
 
-  /* INTRO SECTION */
+  /* INTRO SECTIONS */
   .intro-section {
     margin-bottom: 4rem;
   }
@@ -202,19 +214,10 @@ import heroImg from "../assets/esromgaard_hero.webp";
     object-position: center;
   }
 
+  /* MOBILE */
   @media (max-width: 900px) {
     .hero {
-      height: 58vh !important;
-    }
-
-    .hero-image,
-    .hero > img {
-      height: 100%;
-    }
-
-    .hero-image img,
-    .hero img {
-      object-position: center;
+      height: 58vh;
     }
 
     .intro-title {
@@ -247,7 +250,6 @@ import heroImg from "../assets/esromgaard_hero.webp";
 
     .intro-image {
       aspect-ratio: 5 / 5;
-      order: 2;
       margin-top: 0.5rem;
     }
   }

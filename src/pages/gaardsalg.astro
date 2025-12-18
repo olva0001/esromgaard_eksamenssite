@@ -179,6 +179,21 @@ import Instagram from "../components/Instagram.astro";
     margin-bottom: 1.5rem;
   }
 
+  /* ANIMATION */
+  .salgssteder-cards {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  /* VISIBLE STATE */
+  .salgssteder-cards.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .full-bleed {
     margin-bottom: 5%;
   }
@@ -204,3 +219,28 @@ import Instagram from "../components/Instagram.astro";
     }
   }
 </style>
+
+<script>
+  const cardsSection = document.querySelector(".salgssteder-cards");
+
+  if (cardsSection) {
+    const isDesktop = window.matchMedia("(min-width: 901px)").matches;
+
+    if (isDesktop) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            cardsSection.classList.add("is-visible");
+            observer.disconnect(); // run once
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(cardsSection);
+    } else {
+      // Mobile: show immediately, no animation
+      cardsSection.classList.add("is-visible");
+    }
+  }
+</script>
