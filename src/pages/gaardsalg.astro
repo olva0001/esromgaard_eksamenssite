@@ -231,7 +231,7 @@ import Instagram from "../components/Instagram.astro";
         ([entry]) => {
           if (entry.isIntersecting) {
             cardsSection.classList.add("is-visible");
-            observer.disconnect();
+            observer.disconnect(); // run once
           }
         },
         { threshold: 0.2 }
@@ -239,6 +239,7 @@ import Instagram from "../components/Instagram.astro";
 
       observer.observe(cardsSection);
     } else {
+      // Mobile: show immediately, no animation
       cardsSection.classList.add("is-visible");
     }
   }
